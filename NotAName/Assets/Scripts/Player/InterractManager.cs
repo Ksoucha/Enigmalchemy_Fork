@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class InterractManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Camera")]
+    public Camera cam;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
