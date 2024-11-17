@@ -1,38 +1,30 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickupController : MonoBehaviour
 {
-    [Header("Scripts and Objects reference")]
-    public Transform player;
-    public NeedItemToInteract objectToInterract; 
-    public Inventory inventory;                
-    public KeyCode pickKey = KeyCode.E;        
-    public float pickUpRange = 3f;              
-    public float interactRange = 5f;           
-
-    private void Update()
-    {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-
-        if (distanceToPlayer <= pickUpRange && Input.GetKeyDown(pickKey))
-        {
-            PickUp();
-        }
-    }
-
+    [Header("References")]
+    public Inventory inventory;
+    public RawImage imageToDisplayInInventory;
     private void PickUp()
     {
         inventory.AddItem(this);
-
         gameObject.SetActive(false);
+        imageToDisplayInInventory.color = Color.white;
     }
 
-    public void InteractWithObject()
+    public void AttemptPickup(Camera playerCamera, KeyCode pickKey, float pickupRange)
     {
-        float distanceToObject = Vector3.Distance(player.position, objectToInterract.transform.position);
-        if (distanceToObject <= interactRange)
+        if (Input.GetKeyDown(pickKey))
         {
-            objectToInterract.Interact();
+            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
+            {
+                if (hit.collider.gameObject == gameObject)
+                {
+                    PickUp();
+                }
+            }
         }
     }
 }

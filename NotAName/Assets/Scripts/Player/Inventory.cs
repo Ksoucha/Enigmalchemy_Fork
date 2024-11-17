@@ -1,27 +1,69 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    List<PickupController> pickedUpItems;
-    public KeyCode interractKey = KeyCode.E;
-    [Header("Some range")]
-    public float interactRange;
-    private Transform player;
-    void Start()
+    [Header("Inventory Settings")]
+    private List<PickupController> pickedUpItems = new List<PickupController>();
+    public Camera playerCamera;
+    public KeyCode interactKey = KeyCode.E;
+    public KeyCode pickKey = KeyCode.E;
+    public float interactRange = 5f;
+    public float pickupRange = 3f;
+
+    private void Update()
     {
-        pickedUpItems = new List<PickupController>();
-        player = GetComponent<Transform>();
+        HandlePickup();
+        HandleInteraction();
     }
 
-    void Update()
+    private void HandlePickup()
     {
-        if(Input.GetKeyDown(interractKey))
-            pickedUpItems.ForEach(x => {x.InteractWithObject();});
+        foreach (var pickup in FindObjectsOfType<PickupController>())
+        {
+            pickup.AttemptPickup(playerCamera, pickKey, pickupRange);
+        }
     }
 
-    public void AddItem(PickupController c)
+    private void HandleInteraction()
     {
-        pickedUpItems.Add(c);
+        if (Input.GetKeyDown(interactKey))
+        {
+            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
+            {
+                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    AttemptInteraction(interactable);
+                }
+            }
+        }
+    }
+
+    public void AddItem(PickupController item)
+    {
+        pickedUpItems.Add(item);
+        Debug.Log($"Added : {item.name}");
+    }
+
+    private void AttemptInteraction(IInteractable interactable)
+    {
+        foreach (var item in pickedUpItems)
+        {
+            if (interactable.CanInteract(item))
+            {
+                interactable.Interact();
+
+                item.imageToDisplayInInventory.color = new Color(0,0,0,0);
+
+                pickedUpItems.Remove(item);
+
+                return;
+            }
+        }
+
+        Debug.Log($"Used with : {interactable}");
     }
 }
