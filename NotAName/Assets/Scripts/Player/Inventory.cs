@@ -65,5 +65,6 @@ public class Inventory : MonoBehaviour
         }
 
         Debug.Log($"Used with : {interactable}");
+        interactable.Interact();
     }
 }
