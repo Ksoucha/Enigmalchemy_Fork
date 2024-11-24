@@ -14,10 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
   
     bool readyToJump;
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode crounchKey = KeyCode.LeftControl;
-    public KeyCode sprintKey = KeyCode.LeftShift;
+    // [Header("Keybinds")]
+    // public KeyCode jumpKey = KeyCode.Space;
+    // public KeyCode crounchKey = KeyCode.LeftControl;
+    // public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -67,9 +67,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        horizontalInput = UserInput.Instance.MovementInput.x;
+        verticalInput = UserInput.Instance.MovementInput.y;
+        if(UserInput.Instance.JumpInput && readyToJump && grounded)
         {
 
             readyToJump = false;
@@ -78,12 +78,12 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-        if(Input.GetKeyDown(crounchKey))
+        if(UserInput.Instance.CrouchInput)
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
-        if(Input.GetKeyUp(crounchKey))
+        if(!UserInput.Instance.CrouchInput && transform.localScale.y != startYScale)
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
@@ -91,12 +91,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void StateHandler()
     {
-        if(Input.GetKey(crounchKey))
+        if(UserInput.Instance.CrouchInput)
         {
             state = MovementState.crounching;
             moveSpeed = crouchSpeed;
         }
-        if(grounded && Input.GetKey(sprintKey))
+        if(grounded && UserInput.Instance.SprintInput)
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;

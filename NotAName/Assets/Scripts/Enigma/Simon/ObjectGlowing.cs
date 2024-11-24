@@ -21,10 +21,10 @@ public class GlowObject : MonoBehaviour, IGlowing
 
         emissionIntensity = Mathf.Max(0f, emissionIntensity);
 
-        Color emissionColor = color * emissionIntensity;
+        // Color emissionColor = color * emissionIntensity;
 
-        material.EnableKeyword("_EMISSION");
-        material.SetColor("_EmissionColor", emissionColor);
+        // material.EnableKeyword("_EMISSION");
+        material.SetFloat("_EmissiveExposureWeight", 1.0f - emissionIntensity);
     }
 
     public void UnGlowingMethod()

@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class UserInput : MonoBehaviour
 {
     public static UserInput Instance { get; private set; }
+
     private PlayerInput playerInput;
     private InputAction movement;
     private InputAction view;
@@ -25,6 +26,8 @@ public class UserInput : MonoBehaviour
 
     public float CameraSensitivity { get; set; }
 
+    [SerializeField] private GameObject pauseMenu;
+
     private void Awake()
     {
         if (Instance == null)
@@ -37,20 +40,32 @@ public class UserInput : MonoBehaviour
         }
 
         playerInput = GetComponent<PlayerInput>();
+        CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
 
         SetupInputActions();
     }
 
     private void Update()
     {
-        MovementInput = movement.ReadValue<Vector2>();
-        CameraInput = view.ReadValue<Vector2>();
-        JumpInput = jump.WasPressedThisFrame();
-        SprintInput = sprint.IsPressed();
-        CrouchInput = crouch.IsPressed();
-        InteractInput = interact.WasPressedThisFrame();
-        InspectInput = inspect.WasPressedThisFrame();
+        if (pauseMenu.GetComponent<SettingsMenu>().isMainMenu || (!pauseMenu.activeSelf && !pauseMenu.GetComponent<SettingsMenu>().isMainMenu))
+        {
+            MovementInput = movement.ReadValue<Vector2>();
+            CameraInput = view.ReadValue<Vector2>();
+            JumpInput = jump.WasPressedThisFrame();
+            SprintInput = sprint.IsPressed();
+            CrouchInput = crouch.IsPressed();
+            InteractInput = interact.WasPressedThisFrame();
+            InspectInput = inspect.WasPressedThisFrame();
+        }
         PauseInput = pause.WasPressedThisFrame();
+
+        if (!pauseMenu.GetComponent<SettingsMenu>().isMainMenu && PauseInput)
+        {
+            Time.timeScale = pauseMenu.activeSelf ? 1 : 0;
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            Cursor.lockState = pauseMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = pauseMenu.activeSelf;
+        }
     }
 
     private void SetupInputActions()

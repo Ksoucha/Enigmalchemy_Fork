@@ -15,7 +15,7 @@ public class PickupController : MonoBehaviour
 
     public void AttemptPickup(Camera playerCamera, KeyCode pickKey, float pickupRange)
     {
-        if (Input.GetKeyDown(pickKey))
+        if (UserInput.Instance.InteractInput)
         {
             Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))

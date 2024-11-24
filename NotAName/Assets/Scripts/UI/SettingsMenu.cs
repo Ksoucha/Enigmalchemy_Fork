@@ -18,6 +18,7 @@ public class SettingsMenu : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] private GameObject cam;
+    [SerializeField] public bool isMainMenu;
 
     [Header("Game")]
     [SerializeField] private CustomSlider brightnessSlider;
@@ -72,11 +73,6 @@ public class SettingsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UserInput.Instance.PauseInput)
-        {
-            MainMenu();
-        }
-
         MasterVolume();
         MusicVolume();
         EffectsVolume();
@@ -87,7 +83,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        cam.GetComponent<Animator>().SetBool("IsOnSettings", false);
+        if (isMainMenu) {
+            cam.GetComponent<Animator>().SetBool("IsOnSettings", false);
+        } else {
+            this.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     public void GameTab()
