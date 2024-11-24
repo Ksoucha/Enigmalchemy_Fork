@@ -21,6 +21,7 @@ public class ExamineObject : MonoBehaviour
     public Canvas _canva;
     private Vector3 lastMousePosition;
     private bool inRange = false;
+    public Transform spawn;
 
 
     //List of position and rotation of the interactble objects 
@@ -32,10 +33,12 @@ public class ExamineObject : MonoBehaviour
     void Start()
     {
         _canva.enabled = false;
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
         playerObject = GameObject.Find("Player");
         camObject = GameObject.Find("PlayerCam");
+        transform.position = spawn.position;
+        transform.rotation = spawn.rotation;
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
     }
 
     void Update()
@@ -77,7 +80,6 @@ public class ExamineObject : MonoBehaviour
         Cursor.visible = true;
         playerObject.GetComponent<PlayerMovement>().enabled = false;
         camObject.GetComponent<PlayerCam>().enabled = false;
-        GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Collider>().enabled = false;
         transform.position = offset.position;
     }
@@ -88,7 +90,6 @@ public class ExamineObject : MonoBehaviour
         Cursor.visible = false;
         playerObject.GetComponent<PlayerMovement>().enabled = true;
         camObject.GetComponent<PlayerCam>().enabled = true;
-        GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Collider>().enabled = true;
     }
 
@@ -105,8 +106,8 @@ public class ExamineObject : MonoBehaviour
 
     void NonExamine()
     {
-        transform.position = Vector3.Lerp(transform.position, originalPosition, 0.2f);
-        transform.rotation = Quaternion.Slerp(transform.rotation, originalRotation, 0.2f);
+        transform.position = spawn.position;
+        transform.rotation = spawn.rotation;
     }
 
 }
