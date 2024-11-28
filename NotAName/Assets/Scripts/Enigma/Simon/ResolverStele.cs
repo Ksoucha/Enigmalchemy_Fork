@@ -6,7 +6,7 @@ public class ResolverStele : MonoBehaviour
     [SerializeField]
     private List<ButtonStele> buttonSteleList;
 
-    private bool hasCheckedCorrect; // Pour éviter de recalculer si l'état est stable
+    private bool hasCheckedCorrect;
 
     void Update()
     {
@@ -39,7 +39,7 @@ public class ResolverStele : MonoBehaviour
             return;
         }
 
-        if (enabledCount >= goodCount)
+        if (enabledCount != enabledGoodCount)
         {
             Debug.Log("Not Correct: Resetting glow.");
             foreach (var button in buttonSteleList)
