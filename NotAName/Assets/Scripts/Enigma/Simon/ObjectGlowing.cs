@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class GlowObject : MonoBehaviour, IGlowing
 {
@@ -6,7 +7,6 @@ public class GlowObject : MonoBehaviour, IGlowing
 
     public float maxDistance = 5f;
     public float minDistance = 2f;
-    public Material material;
 
     public void GlowingMethod()
     {
@@ -14,17 +14,11 @@ public class GlowObject : MonoBehaviour, IGlowing
 
         float t = Mathf.InverseLerp(maxDistance, minDistance, distanceToPlayer);
 
-        Color color = Color.Lerp(Color.black, Color.green, t);
-        material.color = color;
-
-        float emissionIntensity = Mathf.Lerp(-10f, 4f, t);
+        float emissionIntensity = Mathf.Lerp(0f, 2000f, t);
 
         emissionIntensity = Mathf.Max(0f, emissionIntensity);
 
-        // Color emissionColor = color * emissionIntensity;
-
-        // material.EnableKeyword("_EMISSION");
-        material.SetFloat("_EmissiveExposureWeight", 1.0f - emissionIntensity);
+        GetComponent<Light>().intensity = emissionIntensity;
     }
 
     public void UnGlowingMethod()
