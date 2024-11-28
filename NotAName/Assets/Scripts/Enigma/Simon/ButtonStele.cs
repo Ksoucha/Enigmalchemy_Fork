@@ -26,16 +26,17 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         material.color = Color.black;
         Color emissionColor = Color.green * 3;
 
-        material.EnableKeyword("_EMISSION");
-        material.SetColor("_EmissionColor", emissionColor);
+        // material.EnableKeyword("_EMISSION");
+        material.SetFloat("_EmissiveExposureWeight",0);
     }
+
     public void UnGlowingMethod()
     {
         material.color = Color.black;
         Color emissionColor = Color.green * -10;
 
-        material.EnableKeyword("_EMISSION");
-        material.SetColor("_EmissionColor", emissionColor);
+        // material.EnableKeyword("_EMISSION");
+        material.SetFloat("_EmissiveExposureWeight", 1);
         this.isEnabled = false;
     }
     public void Interact()

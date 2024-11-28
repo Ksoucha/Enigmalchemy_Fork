@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
 
     private void HandleInteraction()
     {
-        if (Input.GetKeyDown(interactKey))
+        if (UserInput.Instance.InteractInput)
         {
             Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, interactRange))

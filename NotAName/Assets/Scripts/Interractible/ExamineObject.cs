@@ -48,7 +48,7 @@ public class ExamineObject : MonoBehaviour
         if (distanceToPlayer <= pickUpRange) inRange = true;
         else inRange = false;
 
-        if (Input.GetKeyDown(pickKey) && inRange)
+        if (UserInput.Instance.InteractInput && inRange)
         {
             ToggleExamination();
             if (isExamining) StartExamination();
@@ -59,7 +59,7 @@ public class ExamineObject : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(examineKey) && isExamining)
+        if (UserInput.Instance.InspectInput && isExamining)
         {
             _canva.enabled = false;
             Examine(); 
