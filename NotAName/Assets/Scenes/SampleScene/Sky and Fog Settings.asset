@@ -21,13 +21,13 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0.5
   radius:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   spatialBilateralAggressiveness:
     m_OverrideState: 0
     m_Value: 0.15
@@ -378,7 +378,7 @@ MonoBehaviour:
     m_Value: 1
   colorMode:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   color:
     m_OverrideState: 0
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -405,13 +405,13 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 400
+    m_Value: 3
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.5235849, g: 0.7520479, b: 1, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 1
     m_Value: 1
@@ -472,9 +472,9 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 6
+    m_Value: 7
   compensation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   limitMin:
     m_OverrideState: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
     m_Value: 1
   planetRadius:
     m_OverrideState: 1
-    m_Value: 6378.1
+    m_Value: 6325.9
   renderingSpace:
     m_OverrideState: 1
     m_Value: 1
@@ -635,10 +635,10 @@ MonoBehaviour:
     m_Value: {x: 0, y: -6378.1, z: 0}
   windOrientation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 33
   windSpeed:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1334.74
   fogType:
     m_OverrideState: 1
     m_Value: 0
@@ -658,10 +658,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 20
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -670,4 +670,4 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 20

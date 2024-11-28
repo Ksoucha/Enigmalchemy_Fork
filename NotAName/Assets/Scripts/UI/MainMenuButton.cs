@@ -48,7 +48,7 @@ public class MainMenuButton : MonoBehaviour
 
     public void LoadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 
 }

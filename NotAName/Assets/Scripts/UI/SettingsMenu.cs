@@ -35,7 +35,8 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private CustomSlider sensitivitySlider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    void OnEnable()
     {
         gameTab.SetActive(true);
         inputTab.SetActive(false);
@@ -61,7 +62,10 @@ public class SettingsMenu : MonoBehaviour
         mixer.SetFloat("EffectsVolume", PlayerPrefs.GetFloat("EffectsVolume", 0));
 
         sensitivitySlider.UpdateValue(PlayerPrefs.GetFloat("Sensitivity", 50));
-        UserInput.Instance.CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
+        if (UserInput.Instance != null)
+        {
+            UserInput.Instance.CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
+        }
 
         fullscreenToggle.isOn = PlayerPrefs.GetInt("FullScreen", 1) == 1;
         Screen.fullScreen = fullscreenToggle.isOn;
@@ -83,9 +87,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        if (isMainMenu) {
+        if (isMainMenu)
+        {
             cam.GetComponent<Animator>().SetBool("IsOnSettings", false);
-        } else {
+        }
+        else
+        {
+            Time.timeScale = 1;
             this.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

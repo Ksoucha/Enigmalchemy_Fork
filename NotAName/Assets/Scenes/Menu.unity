@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e397c2b9b0a7664caf7ef28180e8841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 1535554935}
 --- !u!4 &444640634
 Transform:
   m_ObjectHideFlags: 0
@@ -1817,6 +1817,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1389189298}
   speed: 4
+--- !u!1 &1535554935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4717024386084812497, guid: 66c4636543c99674f8898e28f9b23005, type: 3}
+  m_PrefabInstance: {fileID: 3089001954632583269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1566659136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2246,6 +2251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5570566430967049850, guid: f122c5b07273b34468689b7c5ee53999, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 36cf24a64a1120943a143b5cd9e81b5d, type: 2}
     - target: {fileID: 8877861283154077378, guid: f122c5b07273b34468689b7c5ee53999, type: 3}
       propertyPath: m_Name
       value: Sky and Fog Global Volume
@@ -2805,8 +2814,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5395220673598428714, guid: b92c608d33cc0e9449f53b6cf3ec7488, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0e9e978f83fe96f48af1fa1f2f9dbcdf, type: 3}
-  m_Resource: {fileID: 8300000, guid: 0e9e978f83fe96f48af1fa1f2f9dbcdf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c9b6388e7ead1541895b4651c690c25, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3c9b6388e7ead1541895b4651c690c25, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3025,11 +3034,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1499152882008001783, guid: 8f71b220a413dfd4a848ce51434e5bf7, type: 3}
       propertyPath: m_Intensity
-      value: 720
+      value: 3256.5293
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499152882008001783, guid: 8f71b220a413dfd4a848ce51434e5bf7, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1499152882008001783, guid: 8f71b220a413dfd4a848ce51434e5bf7, type: 3}
       propertyPath: m_ColorTemperature
-      value: 7471
+      value: 6702
       objectReference: {fileID: 0}
     - target: {fileID: 8637858092106723394, guid: 8f71b220a413dfd4a848ce51434e5bf7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3071,6 +3084,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9075002634621558284, guid: 8f71b220a413dfd4a848ce51434e5bf7, type: 3}
+      propertyPath: useVolumetric
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3088,6 +3105,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 730658926}
+    - target: {fileID: 929169039599843906, guid: 66c4636543c99674f8898e28f9b23005, type: 3}
+      propertyPath: isMainMenu
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1115684107654208143, guid: 66c4636543c99674f8898e28f9b23005, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
