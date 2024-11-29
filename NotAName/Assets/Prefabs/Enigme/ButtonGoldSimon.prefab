@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 798498382075542901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.8094784, z: 0, w: 0.58714974}
-  m_LocalPosition: {x: 616.7894, y: 411.11267, z: 353.93658}
+  m_LocalPosition: {x: 616.797, y: 411.11267, z: 353.934}
   m_LocalScale: {x: 0.8668624, y: 0.90000004, z: 0.0021594258}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -281,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 1370482051069880685}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.25898764, z: 0, w: 0.9658807}
-  m_LocalPosition: {x: 614.92505, y: 411.21466, z: 358.5704}
+  m_LocalPosition: {x: 614.945, y: 411.21466, z: 358.604}
   m_LocalScale: {x: 0.8000002, y: 0.90000004, z: 0.011965337}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -659,7 +659,7 @@ Transform:
   m_GameObject: {fileID: 3780453413228822009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 616.9239, y: 411.19666, z: 354.83783}
+  m_LocalPosition: {x: 616.943, y: 411.114, z: 354.83783}
   m_LocalScale: {x: 0.8000001, y: 0.90000004, z: 0.0029922188}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -892,13 +892,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4197665631222465087}
   - component: {fileID: 252967080970841852}
+  - component: {fileID: 1135667629568179224}
   m_Layer: 0
   m_Name: ButtonGoldSimon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4197665631222465087
 Transform:
   m_ObjectHideFlags: 0
@@ -947,6 +948,23 @@ MonoBehaviour:
   - {fileID: 5003590150285440384}
   - {fileID: 4310229689503618233}
   - {fileID: 6204462181502465929}
+  hasCheckedCorrect: 0
+--- !u!114 &1135667629568179224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179377459397291032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb278c00eff11e499fd7a2d63fd16eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSteles:
+  - {fileID: 252967080970841852}
+  dispear: {fileID: 0}
+  appear: {fileID: 0}
 --- !u!1 &8179614272523769723
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,14 +993,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8179614272523769723}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.08654717, z: 0, w: 0.99624777}
-  m_LocalPosition: {x: 614.0931, y: 411.23865, z: 358.92493}
+  m_LocalRotation: {x: -0, y: 0.106743075, z: -0, w: 0.99428666}
+  m_LocalPosition: {x: 614.095, y: 411.223, z: 358.933}
   m_LocalScale: {x: 0.7992207, y: 0.90000004, z: 0.01761231}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2103360478792423785}
   m_Father: {fileID: 4197665631222465087}
-  m_LocalEulerAnglesHint: {x: 0, y: 9.93, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 12.255, z: 0}
 --- !u!33 &4179926400076781982
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1337,6 +1355,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasSymboleWall
       objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
@@ -1549,6 +1575,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasSymboleWall
       objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
@@ -1654,6 +1688,14 @@ PrefabInstance:
     - target: {fileID: 549912791810655213, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Name
       value: CanvasSymboleWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
@@ -1761,6 +1803,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasSymboleWall
       objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
@@ -1866,6 +1916,14 @@ PrefabInstance:
     - target: {fileID: 549912791810655213, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Name
       value: CanvasSymboleWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
@@ -2184,6 +2242,14 @@ PrefabInstance:
     - target: {fileID: 549912791810655213, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Name
       value: CanvasSymboleWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161593068988029568, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture

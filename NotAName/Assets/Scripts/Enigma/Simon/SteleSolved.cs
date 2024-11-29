@@ -1,20 +1,40 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SteleSolved : MonoBehaviour
 {
     [SerializeField]
-    private ResolverStele myStele;
-    [SerializeField]
-    private ResolverStele otherStele;
+    private List<ResolverStele> allSteles;
+    private bool solved = false;
 
     void Update()
     {
-        if(myStele.hasCheckedCorrect && otherStele.hasCheckedCorrect)
+        if (AreAllStelesSolved() && !solved)
         {
-            myStele.gameObject.SetActive(false);
-            otherStele.gameObject.SetActive(false);
+            ResolvedLogic();
+            solved = true;
         }
     }
 
+    public virtual void ResolvedLogic()
+    {
+        
+    }
 
+    private bool AreAllStelesSolved()
+    {
+        if(!solved)
+        {
+            foreach (ResolverStele stele in allSteles)
+            {
+                if (!stele.hasCheckedCorrect) 
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true; 
+    }
 }

@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 7304616342192829088}
   - component: {fileID: 6378713025409256249}
   - component: {fileID: 9205396418451403183}
-  - component: {fileID: 4141872470695828227}
+  - component: {fileID: 3322882170704897984}
   m_Layer: 0
   m_Name: SteleLeft
   m_TagString: Untagged
@@ -609,7 +609,7 @@ MonoBehaviour:
   - {fileID: 5799076205665863288}
   - {fileID: 4614698035790358602}
   hasCheckedCorrect: 0
---- !u!114 &4141872470695828227
+--- !u!114 &3322882170704897984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -618,11 +618,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 812030407949074161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3819d4368a363e40aeba6422d256896, type: 3}
+  m_Script: {fileID: 11500000, guid: ed91939d6f8b2734da97df286df59d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myStele: {fileID: 9205396418451403183}
-  otherStele: {fileID: 7857246331846476238}
+  allSteles:
+  - {fileID: 9205396418451403183}
+  - {fileID: 7857246331846476238}
+  dispearOne: {fileID: 812030407949074161}
+  dispearTwo: {fileID: 872918065028913443}
 --- !u!1 &872918065028913443
 GameObject:
   m_ObjectHideFlags: 0
