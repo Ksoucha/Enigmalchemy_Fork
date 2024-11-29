@@ -4,22 +4,22 @@ using Cursor = UnityEngine.Cursor;
 public class ExamineObject : MonoBehaviour
 {
     public Transform offset;
-    GameObject playerObject;
-    GameObject camObject;
+    protected GameObject playerObject;
+    protected GameObject camObject;
     public KeyCode pickKey = KeyCode.E;
     public KeyCode examineKey = KeyCode.Mouse0;
     public float pickUpRange = 3f;
     public Transform player;
     public bool isExamining = false;
     public Canvas _canva;
-    private Vector3 lastMousePosition;
+    protected Vector3 lastMousePosition;
     private bool inRange = false;
     public Transform spawn;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
-    private Quaternion currentRotation;
+    protected Quaternion currentRotation;
     private bool isDragging = false; 
 
     void Start()
@@ -87,7 +87,7 @@ public class ExamineObject : MonoBehaviour
         isExamining = !isExamining;
     }
 
-    void StartExamination()
+    public virtual void StartExamination()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -99,7 +99,7 @@ public class ExamineObject : MonoBehaviour
         transform.rotation = currentRotation;
     }
 
-    void StopExamination()
+    public virtual void StopExamination()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -108,7 +108,7 @@ public class ExamineObject : MonoBehaviour
         GetComponent<Collider>().enabled = true;
     }
 
-    void Examine()
+    public virtual void Examine()
     {
         Vector3 deltaMouse = Input.mousePosition - lastMousePosition;
         float rotationSpeed = 0.2f;
