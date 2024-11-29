@@ -9,6 +9,7 @@ public class InterractWithOrb : ExamineObject
     public Transform transformTargetedPos;
     public float transitionSpeed = 2f;
     public Transform cameraBaseTransform;
+    public Transform linkedCircle;
 
     public override void StartExamination()
     {
@@ -64,7 +65,7 @@ public class InterractWithOrb : ExamineObject
         float rotationSpeed = 0.2f;
 
         objectToRotate.Rotate(Vector3.up, -deltaMouse.x * rotationSpeed, Space.World);
-        Debug.Log("Customed");
+        linkedCircle.rotation = objectToRotate.rotation;
 
         lastMousePosition = Input.mousePosition;
     }
