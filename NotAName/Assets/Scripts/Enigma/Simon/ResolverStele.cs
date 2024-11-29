@@ -6,7 +6,7 @@ public class ResolverStele : MonoBehaviour
     [SerializeField]
     private List<ButtonStele> buttonSteleList;
 
-    private bool hasCheckedCorrect;
+    public bool hasCheckedCorrect;
 
     void Update()
     {
