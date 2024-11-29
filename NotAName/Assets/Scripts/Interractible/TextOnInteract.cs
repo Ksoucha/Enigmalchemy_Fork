@@ -2,17 +2,32 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TriggerTextUi : MonoBehaviour
+public class TextOnInteract : MonoBehaviour
 {
-
     [SerializeField] private Text messageText; // Référence au composant Text
     [SerializeField] private string[] messages; // Liste des messages
     [SerializeField] private float delayBetweenMessages; // Délai entre les messages
-    [SerializeField] private Collider player; // Collider du player
 
     private bool alreadyLaunch = false;
 
-    private void OnTriggerEnter(Collider other)
+    public KeyCode pickKey = KeyCode.E;
+    public float pickUpRange = 3f;
+    public Transform player;
+    private bool inRange = false;
+
+    public void Update()
+    {
+        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
+        inRange = distanceToPlayer <= pickUpRange;
+
+
+        if (UserInput.Instance.InteractInput && inRange)
+        {
+            Interact();
+        }
+    }
+
+    public void Interact()
     {
         if (alreadyLaunch == false)
         {
@@ -28,11 +43,8 @@ public class TriggerTextUi : MonoBehaviour
                 return;
             }
 
-            if (other == player)
-            {
-                alreadyLaunch = true;
-                StartCoroutine(DisplayMessages());
-            }
+            alreadyLaunch = true;
+            StartCoroutine(DisplayMessages());
         }
     }
 
@@ -41,10 +53,10 @@ public class TriggerTextUi : MonoBehaviour
         foreach (string message in messages)
         {
             messageText.text = message; // Mettre à jour le texte
+            Debug.Log(message);
             yield return new WaitForSeconds(delayBetweenMessages); // Attendre le délai
         }
 
         messageText.text = ""; // Nettoyer le texte après la fin des messages
     }
-
 }
