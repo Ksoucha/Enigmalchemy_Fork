@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 7304616342192829088}
   - component: {fileID: 6378713025409256249}
   - component: {fileID: 9205396418451403183}
+  - component: {fileID: 4141872470695828227}
   m_Layer: 0
   m_Name: SteleLeft
   m_TagString: Untagged
@@ -490,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 812030407949074161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.62973, y: 7.661291, z: -0.19094086}
+  m_LocalPosition: {x: -66.62973, y: 7.661291, z: -0.07}
   m_LocalScale: {x: 1.7252, y: 3.7377183, z: 0.44473}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -596,10 +597,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSteleList:
   - {fileID: 2732756172487997123}
+  - {fileID: 6642196820404731992}
+  - {fileID: 5467041300828644732}
   - {fileID: 6367779668821744192}
+  - {fileID: 1967132895749465156}
+  - {fileID: 5414950928009937959}
+  - {fileID: 1747018154748075314}
+  - {fileID: 5358623025361060439}
+  - {fileID: 1515705074667293725}
   - {fileID: 8874713534720614439}
   - {fileID: 5799076205665863288}
   - {fileID: 4614698035790358602}
+  hasCheckedCorrect: 0
+--- !u!114 &4141872470695828227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812030407949074161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3819d4368a363e40aeba6422d256896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStele: {fileID: 9205396418451403183}
+  otherStele: {fileID: 7857246331846476238}
 --- !u!1 &872918065028913443
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +652,7 @@ Transform:
   m_GameObject: {fileID: 872918065028913443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -66.62973, y: 7.661291, z: -3.0909424}
+  m_LocalPosition: {x: -66.62973, y: 7.661291, z: -3.18}
   m_LocalScale: {x: 1.7252, y: 3.7377183, z: 0.44473}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -735,10 +758,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSteleList:
   - {fileID: 5076723808485658586}
+  - {fileID: 4654277680838131133}
+  - {fileID: 5703561474037284620}
   - {fileID: 1888776408146868537}
+  - {fileID: 4087305068992006209}
+  - {fileID: 5528322231972004109}
+  - {fileID: 7606935212235995191}
+  - {fileID: 1424839515252176806}
+  - {fileID: 6000779876334206151}
   - {fileID: 7612292911132866420}
   - {fileID: 3187495031314911596}
   - {fileID: 3181382172128168803}
+  hasCheckedCorrect: 0
 --- !u!1 &1017817504516333236
 GameObject:
   m_ObjectHideFlags: 0
@@ -11936,7 +11967,7 @@ PrefabInstance:
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2a01f095a0d2ebe4787d0c0f9895cac2, type: 3}
+      objectReference: {fileID: 2800000, guid: 6243783233153384187ed429c0ee36a3, type: 3}
     - target: {fileID: 8547941966691601482, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12360,7 +12391,7 @@ PrefabInstance:
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 7b71ad07845f32641831481bc1a8df1a, type: 3}
+      objectReference: {fileID: 2800000, guid: 304e9bc4b0f5b89418b8cc52a0b0cce8, type: 3}
     - target: {fileID: 8547941966691601482, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12784,7 +12815,7 @@ PrefabInstance:
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2a01f095a0d2ebe4787d0c0f9895cac2, type: 3}
+      objectReference: {fileID: 2800000, guid: 6243783233153384187ed429c0ee36a3, type: 3}
     - target: {fileID: 8547941966691601482, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12996,7 +13027,7 @@ PrefabInstance:
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 7b71ad07845f32641831481bc1a8df1a, type: 3}
+      objectReference: {fileID: 2800000, guid: 304e9bc4b0f5b89418b8cc52a0b0cce8, type: 3}
     - target: {fileID: 8547941966691601482, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14056,7 +14087,7 @@ PrefabInstance:
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2b37d66154bf915428ef2b7827198dce, type: 3}
+      objectReference: {fileID: 2800000, guid: 54072d7c948603a4b8ae0b5259c5d30d, type: 3}
     - target: {fileID: 8547941966691601482, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14162,7 +14193,7 @@ PrefabInstance:
     - target: {fileID: 4567127811429290429, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2b37d66154bf915428ef2b7827198dce, type: 3}
+      objectReference: {fileID: 2800000, guid: 54072d7c948603a4b8ae0b5259c5d30d, type: 3}
     - target: {fileID: 8547941966691601482, guid: 0448e3f4bf8596a4193275bde8cf1c40, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
