@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e982e0cbe4483754fab027b35cdf8134
+guid: 4d6b7025ccdeb3c47a9cac47140ec8b1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass1
-    second: {fileID: -9015049886776836758, guid: aab54a5c6c387d04f8bf3ada60ff0abd, type: 3}
+      name: BookCover
+    second: {fileID: 2100000, guid: 2f7c56e2801906942a7d7779c76c84e5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: UsedSteel
-    second: {fileID: 2100000, guid: 228f9e9fd4748ae49b21bdcf3b4bac8a, type: 2}
+      name: BookCoverSymbol
+    second: {fileID: 2100000, guid: 547de491259889745987916a0a03a7d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPages
+    second: {fileID: 2100000, guid: 9cebaaa492d49864c9c841ab271a7c1d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

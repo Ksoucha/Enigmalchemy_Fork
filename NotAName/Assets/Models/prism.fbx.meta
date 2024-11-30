@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e982e0cbe4483754fab027b35cdf8134
+guid: 45e39a6c456b1b847be8b33163b12364
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass1
-    second: {fileID: -9015049886776836758, guid: aab54a5c6c387d04f8bf3ada60ff0abd, type: 3}
+      name: PrismMetal
+    second: {fileID: 2100000, guid: 5b9ba06326959d147b50854341c297b3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: UsedSteel
-    second: {fileID: 2100000, guid: 228f9e9fd4748ae49b21bdcf3b4bac8a, type: 2}
+      name: PrismMetalF1
+    second: {fileID: 2100000, guid: 7dcc03373be2d834bbcb14a424e3a361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PrismMetalF2
+    second: {fileID: 2100000, guid: 4b0448d03d08eac488fc0df0d08dfe6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PrismMetalF3
+    second: {fileID: 2100000, guid: 0c77cc395506694448b05a724a141b87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PrismMetalF4
+    second: {fileID: 2100000, guid: 0f2f75dd9f8e527499acd50b81fc339c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

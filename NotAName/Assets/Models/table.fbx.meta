@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e982e0cbe4483754fab027b35cdf8134
+guid: 4e95abc98604c3d44bc3d2c03a4aa533
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass1
-    second: {fileID: -9015049886776836758, guid: aab54a5c6c387d04f8bf3ada60ff0abd, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: UsedSteel
-    second: {fileID: 2100000, guid: 228f9e9fd4748ae49b21bdcf3b4bac8a, type: 2}
+      name: TableWood
+    second: {fileID: 2100000, guid: 1a45cc97899dc9245b0004edaa656b9a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

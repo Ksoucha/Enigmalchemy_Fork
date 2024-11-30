@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e982e0cbe4483754fab027b35cdf8134
+guid: 89b258ee7ea861b4683aec5c71a8849e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass1
-    second: {fileID: -9015049886776836758, guid: aab54a5c6c387d04f8bf3ada60ff0abd, type: 3}
+      name: BookPages
+    second: {fileID: 2100000, guid: 9cebaaa492d49864c9c841ab271a7c1d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: UsedSteel
-    second: {fileID: 2100000, guid: 228f9e9fd4748ae49b21bdcf3b4bac8a, type: 2}
+      name: BookPileCover1
+    second: {fileID: 2100000, guid: a09001669d58b044584f36a32928e94e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPileCover2
+    second: {fileID: 2100000, guid: 8c931c16eb7dbb34fae01c0a843a30b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPileCover3
+    second: {fileID: 2100000, guid: a95cd5069cfe9584bb7e04d11c920d2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPileCover4
+    second: {fileID: 2100000, guid: 4a692dd92ddc3074b97804c7e4e6e49a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPileCover5
+    second: {fileID: 2100000, guid: 2f7c56e2801906942a7d7779c76c84e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPileCover6
+    second: {fileID: 2100000, guid: 56e9ab068c8e8864181b1801464d1f28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPileCover7
+    second: {fileID: 2100000, guid: 908f305a53a887a4a81ed4d51a33c6f6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

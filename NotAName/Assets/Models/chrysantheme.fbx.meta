@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e982e0cbe4483754fab027b35cdf8134
+guid: 43f01cae52feb8345a9dcee384f19080
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass1
-    second: {fileID: -9015049886776836758, guid: aab54a5c6c387d04f8bf3ada60ff0abd, type: 3}
+      name: ChrysFlower
+    second: {fileID: 2100000, guid: 37930016da50d1443b15feb0ef07c705, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: UsedSteel
-    second: {fileID: 2100000, guid: 228f9e9fd4748ae49b21bdcf3b4bac8a, type: 2}
+      name: ChrysLeaf
+    second: {fileID: 2100000, guid: d146cd0e86f877d40bc0b1440a2c6cfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChrysTig
+    second: {fileID: 2100000, guid: 952bcf30cab8296449509e1851206502, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
