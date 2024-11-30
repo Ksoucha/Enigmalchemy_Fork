@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2406962a306f1564d969db4a5806e468
+guid: e0c7b11573e1fda4381ac0a48e8be0ac
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood1
-    second: {fileID: 2100000, guid: 6e294e32086a1df428cbbde69840adea, type: 2}
+      name: Leather1
+    second: {fileID: 2100000, guid: 0e4fd4a164749744e9c4bfb231429513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leather2
+    second: {fileID: 2100000, guid: a9e863651b857264ab141723ddae7f50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeatherFabric
+    second: {fileID: 2100000, guid: f191d391cfd489640aaaf684f9d95982, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

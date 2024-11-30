@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: e0c7b11573e1fda4381ac0a48e8be0ac
+guid: 2406962a306f1564d969db4a5806e468
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Canvas
+    second: {fileID: 2100000, guid: 04256d1ba132eb14f849c37d4d39723a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaintedCanvas
+    second: {fileID: 2100000, guid: 027974f8e8692b64ea5bb1f26b7e426c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood1
+    second: {fileID: 2100000, guid: 6e294e32086a1df428cbbde69840adea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

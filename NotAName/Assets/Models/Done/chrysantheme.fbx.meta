@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 0f8f2c363723a834085b8c9faf7143b9
+guid: 43f01cae52feb8345a9dcee384f19080
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChrysFlower
+    second: {fileID: 2100000, guid: 37930016da50d1443b15feb0ef07c705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChrysLeaf
+    second: {fileID: 2100000, guid: d146cd0e86f877d40bc0b1440a2c6cfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChrysTig
+    second: {fileID: 2100000, guid: 952bcf30cab8296449509e1851206502, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,7 +84,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

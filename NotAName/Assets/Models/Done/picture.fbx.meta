@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 43f01cae52feb8345a9dcee384f19080
+guid: 0f8f2c363723a834085b8c9faf7143b9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PortraitPhoto
+    second: {fileID: 2100000, guid: 69e16d2b7a37a0b4ca5281a197ad8cde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PortraitWood
+    second: {fileID: 2100000, guid: 1a45cc97899dc9245b0004edaa656b9a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,7 +79,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
