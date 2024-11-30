@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (var pickup in FindObjectsOfType<PickupController>())
         {
-            pickup.AttemptPickup(playerCamera, pickKey, pickupRange);
+            pickup.AttemptPickup(playerCamera, pickupRange);
         }
     }
 
@@ -54,17 +54,15 @@ public class Inventory : MonoBehaviour
         {
             if (interactable.CanInteract(item))
             {
+                Debug.Log(item);
                 interactable.Interact();
-
-                item.imageToDisplayInInventory.color = new Color(0,0,0,0);
-
+                Debug.Log($"Used with : {item}");
                 pickedUpItems.Remove(item);
 
+                interactable.Interact();
                 return;
             }
         }
 
-        Debug.Log($"Used with : {interactable}");
-        interactable.Interact();
     }
 }

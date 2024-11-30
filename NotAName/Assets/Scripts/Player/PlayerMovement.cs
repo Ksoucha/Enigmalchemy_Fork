@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
     float horizontalInput;
     float verticalInput;
-
     Vector3 moveDirection;
 
     Rigidbody rb;

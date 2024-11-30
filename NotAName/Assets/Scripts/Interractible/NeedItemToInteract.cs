@@ -6,6 +6,7 @@ public class NeedItemToInteract : MonoBehaviour, IInteractable
     public PickupController requiredItem;
     public bool CanInteract(PickupController item)
     {
+        Debug.Log(item);
         return item == requiredItem;
     }
 

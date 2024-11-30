@@ -61,7 +61,6 @@ public class RotateChecker : MonoBehaviour
         }
         else
         {
-            Debug.Log("Les rotations diffèrent.");
             ResetObjectsPositions();
         }
     }

@@ -10,7 +10,7 @@ public class TriggerTextUi : MonoBehaviour
     [SerializeField] private float delayBetweenMessages; // Délai entre les messages
     [SerializeField] private Collider player; // Collider du player
 
-    public bool alreadyLaunch = false;
+    private bool alreadyLaunch = false;
 
     private void OnTriggerEnter(Collider other)
     {
