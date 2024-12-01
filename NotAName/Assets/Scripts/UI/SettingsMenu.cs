@@ -56,10 +56,10 @@ public class SettingsMenu : MonoBehaviour
         mixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", 0));
 
         musicVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("MusicVolume", 0) + 50);
-        mixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", 0));
+        mixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", 0) + 7);
 
         effectsVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("EffectsVolume", 0) + 50);
-        mixer.SetFloat("EffectsVolume", PlayerPrefs.GetFloat("EffectsVolume", 0));
+        mixer.SetFloat("EffectsVolume", PlayerPrefs.GetFloat("EffectsVolume", 0) - 16);
 
         sensitivitySlider.UpdateValue(PlayerPrefs.GetFloat("Sensitivity", 50));
         if (UserInput.Instance != null)
@@ -148,13 +148,13 @@ public class SettingsMenu : MonoBehaviour
 
     public void MusicVolume()
     {
-        mixer.SetFloat("MusicVolume", musicVolumeSlider.value - 50);
+        mixer.SetFloat("MusicVolume", musicVolumeSlider.value - 43);
         PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value - 50);
     }
 
     public void EffectsVolume()
     {
-        mixer.SetFloat("EffectsVolume", effectsVolumeSlider.value - 50);
+        mixer.SetFloat("EffectsVolume", effectsVolumeSlider.value - 66);
         PlayerPrefs.SetFloat("EffectsVolume", effectsVolumeSlider.value - 50);
     }
 
@@ -174,5 +174,11 @@ public class SettingsMenu : MonoBehaviour
     {
         // RenderSettings.ambientLight = new Color(brightnessSlider.value / 100, brightnessSlider.value / 100, brightnessSlider.value / 100);
         PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
+    }
+
+    public void Exit()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
     }
 }

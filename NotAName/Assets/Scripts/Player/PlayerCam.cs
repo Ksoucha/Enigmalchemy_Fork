@@ -18,8 +18,8 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
-        float mouseX = UserInput.Instance.CameraInput.x * Time.deltaTime * UserInput.Instance.CameraSensitivity;
-        float mouseY = UserInput.Instance.CameraInput.y * Time.deltaTime * UserInput.Instance.CameraSensitivity;
+        float mouseX = UserInput.Instance.CameraInput.x * Time.deltaTime * (UserInput.Instance.CameraSensitivity / 5.5f);
+        float mouseY = UserInput.Instance.CameraInput.y * Time.deltaTime * (UserInput.Instance.CameraSensitivity / 5.5f);
 
         yRotation += mouseX;
 

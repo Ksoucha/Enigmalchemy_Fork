@@ -24,6 +24,8 @@ public class UserInput : MonoBehaviour
     public bool InspectInput { get; private set; }
     public bool PauseInput { get; private set; }
 
+    public bool IsEndScene = false;
+
     public float CameraSensitivity { get; set; }
 
     [SerializeField] private GameObject pauseMenu;
@@ -47,7 +49,7 @@ public class UserInput : MonoBehaviour
 
     private void Update()
     {
-        if (pauseMenu.GetComponent<SettingsMenu>().isMainMenu || (!pauseMenu.activeSelf && !pauseMenu.GetComponent<SettingsMenu>().isMainMenu))
+        if (pauseMenu.GetComponent<SettingsMenu>().isMainMenu || (!pauseMenu.activeSelf && !pauseMenu.GetComponent<SettingsMenu>().isMainMenu) && !IsEndScene)
         {
             MovementInput = movement.ReadValue<Vector2>();
             CameraInput = view.ReadValue<Vector2>();
@@ -56,6 +58,10 @@ public class UserInput : MonoBehaviour
             CrouchInput = crouch.IsPressed();
             InteractInput = interact.WasPressedThisFrame();
             InspectInput = inspect.WasPressedThisFrame();
+        }
+        else if (IsEndScene)
+        {
+            InteractInput = interact.WasPressedThisFrame();
         }
         PauseInput = pause.WasPressedThisFrame();
 

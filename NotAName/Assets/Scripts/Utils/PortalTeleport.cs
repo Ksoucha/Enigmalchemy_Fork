@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class PortalTeleport : MonoBehaviour
 {
-    public Transform linkedPortal; 
-    public float teleportCooldown = 1f;  
-    public float safeDistance = 2f;  
-    private bool isTeleporting = false;  
+    public Transform linkedPortal;
+    public float teleportCooldown = 1f;
+    public float safeDistance = 2f;
+    private bool isTeleporting = false;
+
+    [SerializeField] private bool isEndPortal = false;
+    [SerializeField] private GameObject credits;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +25,7 @@ public class PortalTeleport : MonoBehaviour
         Vector3 relativePosition = transform.InverseTransformPoint(obj.position);
         Vector3 newPosition = linkedPortal.TransformPoint(relativePosition);
 
-        Vector3 portalDirection = (linkedPortal.position - transform.position).normalized; 
+        Vector3 portalDirection = (linkedPortal.position - transform.position).normalized;
         newPosition += portalDirection * safeDistance;
 
         Quaternion relativeRotation = Quaternion.Inverse(transform.rotation) * obj.rotation;
@@ -35,13 +38,23 @@ public class PortalTeleport : MonoBehaviour
         {
             Vector3 childRelativePosition = transform.InverseTransformPoint(child.position);
             Vector3 childNewPosition = linkedPortal.TransformPoint(childRelativePosition);
-            childNewPosition += portalDirection * safeDistance;  
+            childNewPosition += portalDirection * safeDistance;
 
             Quaternion childRelativeRotation = Quaternion.Inverse(transform.rotation) * child.rotation;
             Quaternion childNewRotation = linkedPortal.rotation * childRelativeRotation;
 
             child.position = childNewPosition;
             child.rotation = childNewRotation;
+        }
+
+        Debug.Log("Teleporting player to " + isEndPortal);
+
+        if (isEndPortal)
+        {
+            obj.GetComponent<PlayerMovement>().enabled = false;
+            // obj.GetComponent<PlayerCam>().enabled = false;
+            UserInput.Instance.IsEndScene = true;
+            credits.SetActive(true);
         }
 
         yield return new WaitForSeconds(teleportCooldown);

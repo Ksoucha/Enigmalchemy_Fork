@@ -11,6 +11,7 @@ public class Handwriting : MonoBehaviour
     private float timeBeforeStart = 1.0f;
     private float timeElapsed = 0.0f;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
@@ -28,9 +29,9 @@ public class Handwriting : MonoBehaviour
         {
             currentFrame++;
 
-            if (currentFrame % 10 == 0 && currentFrame / 10 <= text.Length)
+            if (currentFrame % 2 == 0 && currentFrame / 2 <= text.Length)
             {
-                this.GetComponent<TextMeshProUGUI>().text = text.Substring(0, currentFrame / 10);
+                this.GetComponent<TextMeshProUGUI>().text = text.Substring(0, currentFrame / 2);
             }
         }
 
