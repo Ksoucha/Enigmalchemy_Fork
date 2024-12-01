@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -50,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.7f + 0.2f, whatIsGround);
         MyInput();
         StateHandler();
         if (grounded)

@@ -12,10 +12,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
     private void Start()
     {
@@ -41,15 +38,8 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
     }
     public void Interact()
     {
-        if(!isEnabled && !solved)
-        {
-            GlowingMethod();
-            this.isEnabled = true;
-        }
-        else
-        {
-            return;
-        }
+        GlowingMethod();
+        this.isEnabled = true;
     }
 
 

@@ -11,7 +11,7 @@ public class PortalTeleport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isTeleporting || !other.CompareTag("Player")) return;
-
+        this.GetComponent<AudioSource>().Play();
         StartCoroutine(Teleport(other.transform));
     }
 

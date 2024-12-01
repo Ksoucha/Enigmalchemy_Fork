@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     [Header("Inventory Settings")]
-    private List<PickupController> pickedUpItems = new List<PickupController>();
+    public List<PickupController> pickedUpItems = new List<PickupController>();
     public Camera playerCamera;
     public KeyCode interactKey = KeyCode.E;
     public KeyCode pickKey = KeyCode.E;
@@ -50,19 +50,13 @@ public class Inventory : MonoBehaviour
 
     private void AttemptInteraction(IInteractable interactable)
     {
-        foreach (var item in pickedUpItems)
-        {
-            if (interactable.CanInteract(item))
+            foreach (var item in pickedUpItems)
             {
-                Debug.Log(item);
-                interactable.Interact();
-                Debug.Log($"Used with : {item}");
-                pickedUpItems.Remove(item);
-
-                interactable.Interact();
-                return;
+                if (interactable.CanInteract(item))
+                {
+                    interactable.Interact();
+                }
             }
-        }
-
+        
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Cursor = UnityEngine.Cursor;
 
-public class ExamineObject : MonoBehaviour
+public class ExamineObject : MonoBehaviour, IInteractable
 {
     public Transform offset;
     protected GameObject playerObject;
@@ -125,5 +125,15 @@ public class ExamineObject : MonoBehaviour
         transform.rotation = originalRotation;
 
         currentRotation = originalRotation;
+    }
+
+    public bool CanInteract(PickupController item)
+    {
+        return false;
+    }
+
+    public void Interact()
+    {
+        Debug.Log("U can't WTF");
     }
 }
