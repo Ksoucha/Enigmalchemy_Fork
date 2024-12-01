@@ -119,7 +119,7 @@ public class ExamineObject : MonoBehaviour, IInteractable
         lastMousePosition = Input.mousePosition;
     }
 
-    void NonExamine()
+    public virtual void NonExamine()
     {
         transform.position = spawn.position;
         transform.rotation = originalRotation;

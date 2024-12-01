@@ -6,7 +6,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
     public bool isEnabled = false;
     public bool solved = false;
     private Material material;
-    public bool CanInteract(PickupController item)
+    public virtual bool CanInteract(PickupController item)
     {
         if(!isEnabled && !solved)
         {
@@ -18,7 +18,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
     {
         material = GetComponent<Renderer>().material;
     }
-    public void GlowingMethod()
+    public virtual void GlowingMethod()
     {
         material.color = Color.black;
         Color emissionColor = Color.green * 3;
@@ -27,7 +27,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         material.SetFloat("_EmissiveExposureWeight",0);
     }
 
-    public void UnGlowingMethod()
+    public virtual void UnGlowingMethod()
     {
         material.color = Color.black;
         Color emissionColor = Color.green * -10;
@@ -36,7 +36,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         material.SetFloat("_EmissiveExposureWeight", 1);
         this.isEnabled = false;
     }
-    public void Interact()
+    public virtual void Interact()
     {
         GlowingMethod();
         this.isEnabled = true;

@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class ResolverStele : MonoBehaviour
 {
-    [SerializeField]
-    private List<ButtonStele> buttonSteleList;
+    public List<ButtonStele> buttonSteleList;
 
     public bool hasCheckedCorrect;
 
