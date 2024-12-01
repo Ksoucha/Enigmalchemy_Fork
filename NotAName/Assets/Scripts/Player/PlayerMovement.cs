@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-  
+
     bool readyToJump;
     // [Header("Keybinds")]
     // public KeyCode jumpKey = KeyCode.Space;
@@ -35,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
     public MovementState state;
-    public enum MovementState{
+    public enum MovementState
+    {
         walking,
         sprinting,
         air,
@@ -53,10 +54,17 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         MyInput();
         StateHandler();
+        Debug.Log(grounded);
         if (grounded)
             rb.linearDamping = groundDrag;
         else
             rb.linearDamping = 0;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
     }
 
     private void FixedUpdate()
@@ -68,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = UserInput.Instance.MovementInput.x;
         verticalInput = UserInput.Instance.MovementInput.y;
-        if(UserInput.Instance.JumpInput && readyToJump && grounded)
+        if (UserInput.Instance.JumpInput && readyToJump && grounded)
         {
 
             readyToJump = false;
@@ -77,12 +85,12 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-        if(UserInput.Instance.CrouchInput)
+        if (UserInput.Instance.CrouchInput && transform.localScale.y == startYScale)
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
-        if(!UserInput.Instance.CrouchInput && transform.localScale.y != startYScale)
+        if (!UserInput.Instance.CrouchInput && transform.localScale.y != startYScale)
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
@@ -90,20 +98,36 @@ public class PlayerMovement : MonoBehaviour
     }
     private void StateHandler()
     {
-        if(UserInput.Instance.CrouchInput)
+        RaycastHit hit;
+        if (UserInput.Instance.CrouchInput)
         {
             state = MovementState.crounching;
             moveSpeed = crouchSpeed;
         }
-        if(grounded && UserInput.Instance.SprintInput)
+        if (grounded && UserInput.Instance.SprintInput)
         {
-            state = MovementState.sprinting;
-            moveSpeed = sprintSpeed;
+            Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, whatIsGround);
+            if (hit.collider != null)
+            {
+                float angle = Mathf.Abs(hit.transform.rotation.x) * Mathf.Rad2Deg;
+                if (angle >= 10f && angle <= 13f)
+                    moveSpeed = sprintSpeed * 3f;
+                else
+                    moveSpeed = sprintSpeed;
+            }
         }
         else if (grounded)
         {
+            Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, whatIsGround);
+            if (hit.collider != null)
+            {
+                float angle = Mathf.Abs(hit.transform.rotation.x) * Mathf.Rad2Deg;
+                if (angle >= 10f && angle <= 13f)
+                    moveSpeed = walkSpeed * 3f;
+                else
+                    moveSpeed = walkSpeed;
+            }
             state = MovementState.walking;
-            moveSpeed = walkSpeed;
         }
         else
         {
@@ -115,9 +139,9 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if(grounded)
+        if (grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        else if(!grounded)
+        else if (!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
 
