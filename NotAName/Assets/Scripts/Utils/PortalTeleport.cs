@@ -48,4 +48,9 @@ public class PortalTeleport : MonoBehaviour
 
         isTeleporting = false;
     }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, linkedPortal.transform.position);
+    }
 }

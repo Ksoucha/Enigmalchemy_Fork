@@ -103,7 +103,7 @@ Transform:
   m_GameObject: {fileID: 1014496862514671506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.586, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -376,10 +376,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5395220673598428714, guid: b92c608d33cc0e9449f53b6cf3ec7488, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3c9b6388e7ead1541895b4651c690c25, type: 3}
-  m_Resource: {fileID: 8300000, guid: 3c9b6388e7ead1541895b4651c690c25, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 03270d35648b1654ab8740433b2d30f8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 03270d35648b1654ab8740433b2d30f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.9
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -657,7 +657,7 @@ MonoBehaviour:
   airMultiplier: 0.2
   crouchSpeed: 1
   crouchYScale: 0.5
-  playerHeight: 2
+  playerHeight: 2.8
   whatIsGround:
     serializedVersion: 2
     m_Bits: 32768
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickedUpItems:
   - {fileID: 2068858005114832696}
-  playerCamera: {fileID: 1172868786858337175}
+  playerCamera: {fileID: 0}
   interactKey: 101
   pickKey: 101
   interactRange: 3
@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 7839981332704413310}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +860,7 @@ Transform:
   m_GameObject: {fileID: 3786450812601946825}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1071,7 +1071,7 @@ Transform:
   m_GameObject: {fileID: 6911978108115937823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.68793535, z: 0, w: 0.725772}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.449, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

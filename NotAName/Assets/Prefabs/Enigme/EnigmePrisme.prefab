@@ -186,7 +186,6 @@ GameObject:
   - component: {fileID: 1843797991639872513}
   - component: {fileID: 1952073177433104894}
   - component: {fileID: 8552314277406239661}
-  - component: {fileID: 5924550224774383778}
   m_Layer: 0
   m_Name: Prisme
   m_TagString: Object
@@ -310,23 +309,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5924550224774383778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6478376944840908836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a34ca02f486c594292d9af5b9e44e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {fileID: 0}
-  pickKey: 101
-  examineKey: 323
-  pickUpRange: 2
-  player: {fileID: 0}
-  isExamining: 0
-  _canva: {fileID: 0}
-  spawn: {fileID: 4365195749757678336}

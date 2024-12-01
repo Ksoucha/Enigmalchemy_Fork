@@ -28,6 +28,7 @@ public class Prisme : ExamineObject
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactableLayer))
             {
+                
                 GameObject hitObject = hit.collider.gameObject;
 
                 if (hitObject == interactableObject)

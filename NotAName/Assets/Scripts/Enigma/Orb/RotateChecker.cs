@@ -25,6 +25,7 @@ public class RotateChecker : MonoBehaviour
 
     [Header("Success object ")]
     public GameObject successGameObjectToAppear;
+    private bool solved = false;
 
     void Start()
     {
@@ -53,15 +54,17 @@ public class RotateChecker : MonoBehaviour
             Debug.Log("Current rota is good");
             interractWithOrb.pickKey = KeyCode.None;
             interractWithOrb.StopExamination();
+
             successGameObjectToAppear.SetActive(true);
 
             if (moveRoutine != null)
                 StopCoroutine(moveRoutine);
-            moveRoutine = StartCoroutine(MoveBothObjectsToTargets());
-        }
-        else
-        {
-            ResetObjectsPositions();
+            if(!solved)
+            {
+                movingObject2.GetComponent<AudioSource>().Play();
+                solved = true;
+                moveRoutine = StartCoroutine(MoveBothObjectsToTargets());
+            }
         }
     }
 
