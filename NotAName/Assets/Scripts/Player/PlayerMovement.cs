@@ -53,18 +53,17 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.7f + 0.2f, whatIsGround);
         MyInput();
         StateHandler();
-        Debug.Log(grounded);
         if (grounded)
             rb.linearDamping = groundDrag;
         else
             rb.linearDamping = 0;
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
-    }
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (playerHeight * 0.5f + 0.2f));
+    // }
 
     private void FixedUpdate()
     {

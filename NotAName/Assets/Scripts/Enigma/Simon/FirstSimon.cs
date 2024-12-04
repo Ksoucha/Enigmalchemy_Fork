@@ -9,10 +9,16 @@ public class FirstSimon : SteleSolved
     public GameObject translatePosTwo;
     public float translateTime;
 
+    [SerializeField]
+    private AudioClip correctSound;
+
     public override void ResolvedLogic()
     {
+        translateOne.GetComponent<AudioSource>().clip = correctSound;
         StartCoroutine(MoveToPosition(translateOne, translatePosOne.transform.position, translateTime));
         translateOne.GetComponent<AudioSource>().Play();
+
+        translateTwo.GetComponent<AudioSource>().clip = correctSound;
         StartCoroutine(MoveToPosition(translateTwo, translatePosTwo.transform.position, translateTime));
         translateTwo.GetComponent<AudioSource>().Play();
     }

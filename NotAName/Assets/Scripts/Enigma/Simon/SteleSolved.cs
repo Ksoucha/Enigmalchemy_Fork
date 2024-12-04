@@ -8,6 +8,7 @@ public class SteleSolved : MonoBehaviour
     private List<ResolverStele> allSteles;
     private bool solved = false;
 
+
     void Update()
     {
         if (AreAllStelesSolved() && !solved)
@@ -19,22 +20,22 @@ public class SteleSolved : MonoBehaviour
 
     public virtual void ResolvedLogic()
     {
-        
+
     }
 
     private bool AreAllStelesSolved()
     {
-        if(!solved)
+        if (!solved)
         {
             foreach (ResolverStele stele in allSteles)
             {
-                if (!stele.hasCheckedCorrect) 
+                if (!stele.hasCheckedCorrect)
                 {
                     return false;
                 }
             }
         }
 
-        return true; 
+        return true;
     }
 }

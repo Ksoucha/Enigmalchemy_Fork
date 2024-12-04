@@ -14,7 +14,6 @@ public class Book : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Interacting with book");
         canvas.SetActive(true);
         page.SetActive(true);
     }

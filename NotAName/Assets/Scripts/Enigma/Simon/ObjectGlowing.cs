@@ -14,7 +14,7 @@ public class GlowObject : MonoBehaviour, IGlowing
 
         float t = Mathf.InverseLerp(maxDistance, minDistance, distanceToPlayer);
 
-        float emissionIntensity = Mathf.Lerp(0f, 2000f, t);
+        float emissionIntensity = Mathf.Lerp(0f, 900f, t);
 
         emissionIntensity = Mathf.Max(0f, emissionIntensity);
 

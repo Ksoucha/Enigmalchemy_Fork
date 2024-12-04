@@ -128,7 +128,7 @@ Material:
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Tint: {r: 0.872, g: 0.8218411, b: 0.37757596, a: 1}
+    - _Tint: {r: 0.9056604, g: 0.8385292, b: 0.2007832, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &159389522114350907

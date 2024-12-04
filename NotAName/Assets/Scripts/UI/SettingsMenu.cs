@@ -14,7 +14,6 @@ public class SettingsMenu : MonoBehaviour
 
     [Header("Bindings Tabs")]
     [SerializeField] private GameObject keyboardTab;
-    [SerializeField] private GameObject gamepadTab;
 
     [Header("Other")]
     [SerializeField] private GameObject cam;
@@ -36,21 +35,13 @@ public class SettingsMenu : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void OnEnable()
+    void Start()
     {
+        Debug.Log("We're in the settings menu");
         gameTab.SetActive(true);
         inputTab.SetActive(false);
         audioTab.SetActive(false);
-        if (InputSystem.GetDevice<Gamepad>() != null)
-        {
-            keyboardTab.SetActive(false);
-            gamepadTab.SetActive(true);
-        }
-        else
-        {
-            keyboardTab.SetActive(true);
-            gamepadTab.SetActive(false);
-        }
+        keyboardTab.SetActive(true);
 
         masterVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("MasterVolume", 0) + 50);
         mixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", 0));
@@ -70,8 +61,34 @@ public class SettingsMenu : MonoBehaviour
         fullscreenToggle.isOn = PlayerPrefs.GetInt("FullScreen", 1) == 1;
         Screen.fullScreen = fullscreenToggle.isOn;
 
-        brightnessSlider.UpdateValue(PlayerPrefs.GetFloat("Brightness", 50));
+        // brightnessSlider.UpdateValue(PlayerPrefs.GetFloat("Brightness", 50));
         // RenderSettings.ambientLight = new Color(brightnessSlider.value / 100, brightnessSlider.value / 100, brightnessSlider.value / 100);
+    }
+
+    public void Init()
+    {
+        Debug.Log("We're in the settings menu");
+        inputTab.SetActive(false);
+        audioTab.SetActive(false);
+        keyboardTab.SetActive(true);
+
+        masterVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("MasterVolume", 0) + 50);
+        mixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", 0));
+
+        musicVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("MusicVolume", 0) + 50);
+        mixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", 0) + 7);
+
+        effectsVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("EffectsVolume", 0) + 50);
+        mixer.SetFloat("EffectsVolume", PlayerPrefs.GetFloat("EffectsVolume", 0) - 16);
+
+        sensitivitySlider.UpdateValue(PlayerPrefs.GetFloat("Sensitivity", 50));
+        if (UserInput.Instance != null)
+        {
+            UserInput.Instance.CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
+        }
+
+        fullscreenToggle.isOn = PlayerPrefs.GetInt("FullScreen", 1) == 1;
+        Screen.fullScreen = fullscreenToggle.isOn;
     }
 
     // Update is called once per frame
@@ -131,13 +148,6 @@ public class SettingsMenu : MonoBehaviour
     public void KeyboardTab()
     {
         keyboardTab.SetActive(true);
-        gamepadTab.SetActive(false);
-    }
-
-    public void GamepadTab()
-    {
-        keyboardTab.SetActive(false);
-        gamepadTab.SetActive(true);
     }
 
     public void MasterVolume()
@@ -173,7 +183,7 @@ public class SettingsMenu : MonoBehaviour
     public void Brightness()
     {
         // RenderSettings.ambientLight = new Color(brightnessSlider.value / 100, brightnessSlider.value / 100, brightnessSlider.value / 100);
-        PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
+        // PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
     }
 
     public void Exit()

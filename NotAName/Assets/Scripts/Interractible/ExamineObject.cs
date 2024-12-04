@@ -20,7 +20,7 @@ public class ExamineObject : MonoBehaviour, IInteractable
     private Quaternion originalRotation;
 
     protected Quaternion currentRotation;
-    private bool isDragging = false; 
+    private bool isDragging = false;
 
     void Start()
     {
@@ -114,7 +114,7 @@ public class ExamineObject : MonoBehaviour, IInteractable
         float rotationSpeed = 0.2f;
 
         transform.Rotate(deltaMouse.x * rotationSpeed * Vector3.down, Space.World);
-        transform.Rotate(deltaMouse.y * rotationSpeed * Vector3.left, Space.World);
+        transform.Rotate(deltaMouse.y * rotationSpeed * Vector3.right, Space.World);
 
         lastMousePosition = Input.mousePosition;
     }

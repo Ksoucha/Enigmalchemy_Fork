@@ -47,8 +47,6 @@ public class PortalTeleport : MonoBehaviour
             child.rotation = childNewRotation;
         }
 
-        Debug.Log("Teleporting player to " + isEndPortal);
-
         if (isEndPortal)
         {
             obj.GetComponent<PlayerMovement>().enabled = false;

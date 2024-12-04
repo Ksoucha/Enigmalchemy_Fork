@@ -7,6 +7,15 @@ public class ResolverStele : MonoBehaviour
 
     public bool hasCheckedCorrect;
 
+    [SerializeField]
+    private float timeToCheck = .5f;
+    private float elapsedTime = 0f;
+
+    [SerializeField]
+    private AudioClip correctSound;
+    [SerializeField]
+    private AudioClip incorrectSound;
+
     void Update()
     {
         CheckIfCorrect();
@@ -30,7 +39,7 @@ public class ResolverStele : MonoBehaviour
         if (enabledGoodCount == goodCount)
         {
             Debug.Log("Correct");
-            foreach(var button in buttonSteleList)
+            foreach (var button in buttonSteleList)
             {
                 button.solved = true;
             }
@@ -38,12 +47,21 @@ public class ResolverStele : MonoBehaviour
             return;
         }
 
-        if (enabledCount != enabledGoodCount)
+        if (enabledCount > goodCount || (enabledCount == goodCount && enabledGoodCount != goodCount))
         {
-            Debug.Log("Not Correct: Resetting glow.");
-            foreach (var button in buttonSteleList)
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime >= timeToCheck)
             {
-                button.UnGlowingMethod();
+                Debug.Log("Not Correct: Resetting glow.");
+
+                this.GetComponent<AudioSource>().clip = incorrectSound;
+                this.GetComponent<AudioSource>().Play();
+
+                foreach (var button in buttonSteleList)
+                {
+                    button.UnGlowingMethod();
+                }
+                elapsedTime = 0f;
             }
         }
     }

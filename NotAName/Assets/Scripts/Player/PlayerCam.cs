@@ -10,8 +10,11 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    Vector2 offset;
+
     void Start()
     {
+        offset = UserInput.Instance.CameraInput;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -30,9 +33,9 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.forward * 5);
-    }
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawLine(transform.position, transform.forward * 5);
+    // }
 }
