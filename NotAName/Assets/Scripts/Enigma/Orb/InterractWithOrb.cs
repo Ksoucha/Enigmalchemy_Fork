@@ -4,12 +4,14 @@ using UnityEngine;
 public class InterractWithOrb : ExamineObject
 {
     [Header("Only For Orbs Enigme")]
-    public Transform objectToRotate; 
+    public Transform objectToRotate;
     public float targetPositionUnits = 2f;
     public Transform transformTargetedPos;
     public float transitionSpeed = 2f;
     public Transform cameraBaseTransform;
     public Transform linkedCircle;
+    // private bool examining = false;
+    // private bool hovering = false;
 
     public override void StartExamination()
     {
@@ -59,8 +61,15 @@ public class InterractWithOrb : ExamineObject
         cameraTransform.rotation = targetRotation;
     }
 
+    // new private void Hover()
+    // {
+    //     highlight.SetActive(true);
+    //     hovering = true;
+    // }
+
     public override void Examine()
     {
+        // examining = true;
         Vector3 deltaMouse = Input.mousePosition - base.lastMousePosition;
         float rotationSpeed = 0.2f;
 
@@ -69,4 +78,15 @@ public class InterractWithOrb : ExamineObject
 
         lastMousePosition = Input.mousePosition;
     }
+
+
+    // private void Update()
+    // {
+    //     if (!hovering || examining)
+    //     {
+    //         highlight.SetActive(false);
+    //     }
+    //     hovering = false;
+    //     examining = false;
+    // }
 }

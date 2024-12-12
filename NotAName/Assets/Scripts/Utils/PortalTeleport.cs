@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class PortalTeleport : MonoBehaviour
 {
@@ -7,6 +9,11 @@ public class PortalTeleport : MonoBehaviour
     public float teleportCooldown = 1f;
     public float safeDistance = 2f;
     private bool isTeleporting = false;
+
+    [SerializeField] private Volume volume;
+    [SerializeField] private float decaySpeed = 0.001f;
+    private ChromaticAberration chromaticAberration;
+    private LensDistortion lensDistortion;
 
     [SerializeField] private bool isEndPortal = false;
     [SerializeField] private GameObject credits;
@@ -16,6 +23,24 @@ public class PortalTeleport : MonoBehaviour
         if (isTeleporting || !other.CompareTag("Player")) return;
         this.GetComponent<AudioSource>().Play();
         StartCoroutine(Teleport(other.transform));
+    }
+
+    private void Start()
+    {
+        volume.profile.TryGet<ChromaticAberration>(out chromaticAberration);
+        volume.profile.TryGet<LensDistortion>(out lensDistortion);
+    }
+
+    private void Update()
+    {
+        if (chromaticAberration.intensity.value > 0f)
+        {
+            chromaticAberration.intensity.value -= decaySpeed * Time.deltaTime;
+        }
+        if (lensDistortion.intensity.value > 0f)
+        {
+            lensDistortion.intensity.value -= decaySpeed * Time.deltaTime;
+        }
     }
 
     private IEnumerator Teleport(Transform obj)
@@ -33,6 +58,11 @@ public class PortalTeleport : MonoBehaviour
 
         obj.position = newPosition;
         obj.rotation = newRotation;
+
+        chromaticAberration.intensity.value = 1f;
+        lensDistortion.intensity.value = .5f;
+
+
 
         foreach (Transform child in obj)
         {

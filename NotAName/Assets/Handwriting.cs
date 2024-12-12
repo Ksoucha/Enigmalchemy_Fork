@@ -29,9 +29,9 @@ public class Handwriting : MonoBehaviour
         {
             currentFrame++;
 
-            if (currentFrame % 2 == 0 && currentFrame / 2 <= text.Length)
+            if (currentFrame % 3 == 0 && currentFrame / 3 <= text.Length)
             {
-                this.GetComponent<TextMeshProUGUI>().text = text.Substring(0, currentFrame / 2);
+                this.GetComponent<TextMeshProUGUI>().text = text.Substring(0, currentFrame / 3);
             }
         }
 

@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class Prisme : ExamineObject
 {
-    public GameObject interactableObject; 
+    public GameObject interactableObject;
     public Rolling rolling;
-    public LayerMask interactableLayer;   
+    public LayerMask interactableLayer;
+
 
     public override void StartExamination()
     {
         base.StartExamination();
-        transform.position = offset.position;  
+        transform.position = offset.position;
     }
 
     public override void StopExamination()
@@ -21,19 +22,19 @@ public class Prisme : ExamineObject
     {
         base.Examine();
 
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactableLayer))
             {
-                
+
                 GameObject hitObject = hit.collider.gameObject;
 
                 if (hitObject == interactableObject)
                 {
-                    Interact(hitObject); 
+                    Interact(hitObject);
                 }
             }
         }
@@ -43,6 +44,11 @@ public class Prisme : ExamineObject
     {
         rolling.StartRolling();
         hitObject.GetComponent<Renderer>().material.color = Color.red;
+    }
+
+    public bool CanInteract()
+    {
+        return true;
     }
 
     public override void NonExamine()

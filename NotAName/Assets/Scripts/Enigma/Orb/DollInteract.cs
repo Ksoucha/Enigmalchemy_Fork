@@ -13,4 +13,9 @@ public class DollInteract : MonoBehaviour, IInteractable
         this.gameObject.SetActive(false);
         lastRolling.StartRolling();
     }
+
+    public void Hover()
+    {
+
+    }
 }

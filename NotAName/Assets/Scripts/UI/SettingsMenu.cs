@@ -37,7 +37,6 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("We're in the settings menu");
         gameTab.SetActive(true);
         inputTab.SetActive(false);
         audioTab.SetActive(false);
@@ -67,28 +66,16 @@ public class SettingsMenu : MonoBehaviour
 
     public void Init()
     {
-        Debug.Log("We're in the settings menu");
         inputTab.SetActive(false);
         audioTab.SetActive(false);
         keyboardTab.SetActive(true);
 
         masterVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("MasterVolume", 0) + 50);
-        mixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", 0));
-
         musicVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("MusicVolume", 0) + 50);
-        mixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", 0) + 7);
-
         effectsVolumeSlider.UpdateValue(PlayerPrefs.GetFloat("EffectsVolume", 0) + 50);
-        mixer.SetFloat("EffectsVolume", PlayerPrefs.GetFloat("EffectsVolume", 0) - 16);
-
         sensitivitySlider.UpdateValue(PlayerPrefs.GetFloat("Sensitivity", 50));
-        if (UserInput.Instance != null)
-        {
-            UserInput.Instance.CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
-        }
 
         fullscreenToggle.isOn = PlayerPrefs.GetInt("FullScreen", 1) == 1;
-        Screen.fullScreen = fullscreenToggle.isOn;
     }
 
     // Update is called once per frame
@@ -190,5 +177,11 @@ public class SettingsMenu : MonoBehaviour
     {
         Debug.Log("Exit");
         Application.Quit();
+    }
+
+    public void LoadMenu()
+    {
+        Debug.Log("Menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 }

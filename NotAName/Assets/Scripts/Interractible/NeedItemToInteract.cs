@@ -15,4 +15,9 @@ public class NeedItemToInteract : MonoBehaviour, IInteractable
         Debug.Log($"{gameObject.name} activé !");
         gameObject.SetActive(false);
     }
+
+    public void Hover()
+    {
+
+    }
 }

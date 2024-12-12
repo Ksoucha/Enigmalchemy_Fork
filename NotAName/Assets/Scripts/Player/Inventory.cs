@@ -28,16 +28,20 @@ public class Inventory : MonoBehaviour
 
     private void HandleInteraction()
     {
-        if (UserInput.Instance.InteractInput)
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
         {
-            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (UserInput.Instance.InteractInput)
             {
-                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
                     AttemptInteraction(interactable);
                 }
+            }
+            else if (interactable != null)
+            {
+                interactable.Hover();
             }
         }
     }
@@ -50,13 +54,13 @@ public class Inventory : MonoBehaviour
 
     private void AttemptInteraction(IInteractable interactable)
     {
-            foreach (var item in pickedUpItems)
+        foreach (var item in pickedUpItems)
+        {
+            if (interactable.CanInteract(item))
             {
-                if (interactable.CanInteract(item))
-                {
-                    interactable.Interact();
-                }
+                interactable.Interact();
             }
-        
+        }
+
     }
 }

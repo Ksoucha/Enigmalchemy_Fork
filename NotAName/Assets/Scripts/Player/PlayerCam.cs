@@ -14,6 +14,8 @@ public class PlayerCam : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = -1;
+
         offset = UserInput.Instance.CameraInput;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

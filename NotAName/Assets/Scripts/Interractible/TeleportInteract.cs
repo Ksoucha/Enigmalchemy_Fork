@@ -14,4 +14,9 @@ public class TeleportInteract : MonoBehaviour, IInteractable
     {
         targetTeleport.transform.position = locationTeleport.transform.position;
     }
+
+    public void Hover()
+    {
+
+    }
 }

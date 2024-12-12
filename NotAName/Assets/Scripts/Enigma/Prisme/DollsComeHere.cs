@@ -18,6 +18,11 @@ public class DollsComeHere : MonoBehaviour, IInteractable
         startScale = this.transform.localScale;
     }
 
+    public void Hover()
+    {
+
+    }
+
     void Update()
     {
         this.transform.localScale = startScale + Vector3.one * Mathf.Sin(Time.time * scaleSpeed) * amplitude;

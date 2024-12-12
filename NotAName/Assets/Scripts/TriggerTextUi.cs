@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class TriggerTextUi : MonoBehaviour
 {
 
-    [SerializeField] private Text messageText; // Référence au composant Text
+    [SerializeField] private Text messageText; // Rï¿½fï¿½rence au composant Text
     [SerializeField] private string[] messages; // Liste des messages
-    [SerializeField] private float delayBetweenMessages; // Délai entre les messages
+    [SerializeField] private float delayBetweenMessages; // Dï¿½lai entre les messages
     [SerializeField] private Collider player; // Collider du player
 
     private bool alreadyLaunch = false;
@@ -18,7 +18,6 @@ public class TriggerTextUi : MonoBehaviour
         {
             if (messageText == null)
             {
-                Debug.LogError("Le champ 'messageText' n'est pas assigné.");
                 return;
             }
 
@@ -40,11 +39,11 @@ public class TriggerTextUi : MonoBehaviour
     {
         foreach (string message in messages)
         {
-            messageText.text = message; // Mettre à jour le texte
-            yield return new WaitForSeconds(delayBetweenMessages); // Attendre le délai
+            messageText.text = message; // Mettre ï¿½ jour le texte
+            yield return new WaitForSeconds(delayBetweenMessages); // Attendre le dï¿½lai
         }
 
-        messageText.text = ""; // Nettoyer le texte après la fin des messages
+        messageText.text = ""; // Nettoyer le texte aprï¿½s la fin des messages
     }
 
 }

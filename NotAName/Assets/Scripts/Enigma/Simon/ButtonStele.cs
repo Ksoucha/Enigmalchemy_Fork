@@ -7,7 +7,37 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
     public bool solved = false;
     private Material material;
 
-    private Color x938572 = new Color(0.576f, 0.521f, 0.447f);
+
+    [SerializeField] private GameObject[] highlight;
+    [SerializeField] private LayerMask interactible;
+    private bool hover = false;
+
+    private void Update()
+    {
+        if (hover == false)
+        {
+            foreach (GameObject obj in highlight)
+            {
+                obj.SetActive(false);
+            }
+        }
+        else
+        {
+            hover = false;
+        }
+    }
+
+    public void Hover()
+    {
+        if (!isEnabled && !solved)
+        {
+            foreach (GameObject obj in highlight)
+            {
+                obj.SetActive(true);
+            }
+            hover = true;
+        }
+    }
 
     public virtual bool CanInteract(PickupController item)
     {
@@ -17,13 +47,14 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         }
         return false;
     }
+
     private void Start()
     {
         material = GetComponent<Renderer>().material;
     }
     public virtual void GlowingMethod()
     {
-        material.color = Color.green;
+        // material.color = Color.green;
         Color emissionColor = Color.green * 3;
 
         // material.EnableKeyword("_EMISSION");
@@ -32,7 +63,6 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
 
     public virtual void UnGlowingMethod()
     {
-        material.color = x938572;
         Color emissionColor = Color.green * -10;
 
         // material.EnableKeyword("_EMISSION");

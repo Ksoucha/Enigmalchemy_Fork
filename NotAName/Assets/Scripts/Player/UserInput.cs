@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class UserInput : MonoBehaviour
@@ -29,9 +31,16 @@ public class UserInput : MonoBehaviour
     public float CameraSensitivity { get; set; }
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private AudioMixer mixer;
 
+    [SerializeField] private GameObject fps;
+    [SerializeField] private TMP_Text currentFrame;
+    private float timer = 0.0f;
+    private int counter = 0;
     private void Awake()
     {
+        Application.targetFrameRate = -1;
+
         if (Instance == null)
         {
             Instance = this;
@@ -45,10 +54,52 @@ public class UserInput : MonoBehaviour
         CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
 
         SetupInputActions();
+
+        mixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", 0));
+        mixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", 0) + 7);
+        mixer.SetFloat("EffectsVolume", PlayerPrefs.GetFloat("EffectsVolume", 0) - 16);
+        CameraSensitivity = PlayerPrefs.GetFloat("Sensitivity", 50);
+        Screen.fullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
+    }
+
+    public string GetBindingText(string binding)
+    {
+        switch (binding)
+        {
+            case "Interact":
+                return interact.GetBindingDisplayString();
+            case "Jump":
+                return jump.GetBindingDisplayString();
+            case "Inspect":
+            case "Examine":
+                return inspect.GetBindingDisplayString();
+            case "Sprint":
+                return sprint.GetBindingDisplayString();
+            case "Crouch":
+                return crouch.GetBindingDisplayString();
+            case "Pause":
+                return pause.GetBindingDisplayString();
+            default:
+                return "[unknown binding]";
+        };
     }
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        {
+            fps.SetActive(!fps.activeInHierarchy);
+        }
+        timer += Time.deltaTime;
+        counter += 1;
+
+        if (timer >= 1.0f)
+        {
+            currentFrame.text = counter.ToString();
+            counter = 0;
+            timer = 0.0f;
+        }
+
         if (pauseMenu.GetComponent<SettingsMenu>().isMainMenu || (!pauseMenu.activeSelf && !pauseMenu.GetComponent<SettingsMenu>().isMainMenu) && !IsEndScene)
         {
             MovementInput = movement.ReadValue<Vector2>();

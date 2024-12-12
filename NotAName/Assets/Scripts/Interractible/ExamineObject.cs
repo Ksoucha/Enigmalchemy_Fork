@@ -22,6 +22,9 @@ public class ExamineObject : MonoBehaviour, IInteractable
     protected Quaternion currentRotation;
     private bool isDragging = false;
 
+    [SerializeField] public GameObject highlight;
+    private bool hover = false;
+
     void Start()
     {
         _canva.enabled = false;
@@ -37,6 +40,14 @@ public class ExamineObject : MonoBehaviour, IInteractable
 
     void Update()
     {
+        if (hover)
+        {
+            hover = false;
+        }
+        else
+        {
+            highlight.SetActive(false);
+        }
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);
         inRange = distanceToPlayer <= pickUpRange;
 
@@ -129,7 +140,16 @@ public class ExamineObject : MonoBehaviour, IInteractable
 
     public bool CanInteract(PickupController item)
     {
-        return false;
+        return true;
+    }
+
+    public void Hover()
+    {
+        if (highlight != null)
+        {
+            highlight.SetActive(true);
+        }
+        hover = true;
     }
 
     public void Interact()
