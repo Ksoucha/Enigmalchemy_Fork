@@ -18,45 +18,33 @@ public class PortalCameraScript : MonoBehaviour
     {
         if (linkedPortal == null) return;
 
-        // if (drawGizmos)
-        // {
-        //     // Debug.Log("Player Camera: " + playerCamera.position);
-        //     // Debug.Log("Area X: (" + (-area.x + offset.x + transform.position.x) + ", " + (area.x + offset.x + transform.position.x) + ")");
-        //     // Debug.Log("Area Y: (" + (-area.y + offset.y + transform.position.y) + ", " + (area.y + offset.y + transform.position.y) + ")");
-        //     // Debug.Log("Area Z: (" + (-area.z + offset.z + transform.position.z) + ", " + (area.z + offset.z + transform.position.z) + ")");
-        // }
+        float playerCamY = playerCamera.position.y;
+        float portalOffsetYMinus = (transform.position.y - area.y / 2) + offset.y;
+        float portalOffsetYPlus = (transform.position.y + area.y / 2) + offset.y;
+        float playerCamX = playerCamera.position.x;
+        float portalOffsetXMinus = (transform.position.x - area.x / 2) + offset.x;
+        float portalOffsetXPlus = (transform.position.x + area.x / 2) + offset.x;
+        float playerCamZ = playerCamera.position.z;
+        float portalOffsetZMinus = (transform.position.z - area.z / 2) + offset.z;
+        float portalOffsetZPlus = (transform.position.z + area.z / 2) + offset.z;
 
-        // Vector3 playerToPortal = transform.position - playerCamera.position;
-        // portalCamera.transform.rotation = Quaternion.LookRotation(playerToPortal, Vector3.up);
-        // portalCamera.transform.position = new Vector3(portalCamera.transform.position.x, playerCamera.position.y, portalCamera.transform.position.z);
+        float portalCamZ = portalCamera.transform.position.z;
+        float portalCamX = portalCamera.transform.position.x;
 
-        if (playerCamera.position.y > (transform.position.y - area.y / 2) + offset.y && playerCamera.position.y < (transform.position.y + area.y / 2) + offset.y)
+        portalCamera.gameObject.SetActive(false);
+
+        if (playerCamY > portalOffsetYMinus && playerCamY < portalOffsetYPlus)
         {
-            // Debug.Log("In Y : " + (playerCamera.position.x > ((transform.position.x - area.x / 2) + offset.x)) + " " + (playerCamera.position.x < ((transform.position.x + area.x / 2) + offset.x)));
-            if (playerCamera.position.x > (transform.position.x - area.x / 2) + offset.x && playerCamera.position.x < (transform.position.x + area.x / 2) + offset.x)
+            if (playerCamX > portalOffsetXMinus && playerCamX < portalOffsetXPlus)
             {
-                // Debug.Log("In X");
-                if (playerCamera.position.z > (transform.position.z - area.z / 2) + offset.z && playerCamera.position.z < (transform.position.z + area.z / 2) + offset.z)
+                if (playerCamZ > portalOffsetZMinus && playerCamZ < portalOffsetZPlus)
                 {
-                    // Debug.Log("In Z");
                     portalCamera.gameObject.SetActive(true);
                     Vector3 playerToPortal = transform.position - playerCamera.position;
                     portalCamera.transform.rotation = Quaternion.LookRotation(playerToPortal, Vector3.up);
-                    portalCamera.transform.position = new Vector3(portalCamera.transform.position.x, playerCamera.position.y, portalCamera.transform.position.z);
-                }
-                else
-                {
-                    portalCamera.gameObject.SetActive(false);
+                    portalCamera.transform.position = new Vector3(portalCamX, playerCamY, portalCamZ);
                 }
             }
-            else
-            {
-                portalCamera.gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            portalCamera.gameObject.SetActive(false);
         }
     }
 
