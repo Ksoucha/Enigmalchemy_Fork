@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         if (grounded)
             rb.linearDamping = groundDrag;
         else
-            rb.linearDamping = 0;
+            rb.linearDamping = 10;
     }
 
     // void OnDrawGizmos()
