@@ -24,8 +24,6 @@ public class Inventory : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // by merging pickup and interacable together, we don't need to do 2 raycast
-        // to do similar action
         HandleInteraction();
     }
 
@@ -48,8 +46,7 @@ public class Inventory : MonoBehaviour
                 {
                     AttemptInteraction(interactable);
                 }
-                // Since the original game has two different range for pick up and interact, we simply just check the distance
-                // after doing the raycast
+            
                 else if (pickup != null && Vector3.Distance(pickup.transform.position, playerCamera.transform.position) <= pickupRange)
                 {
                     Debug.Log("Pick Up!");
@@ -59,7 +56,6 @@ public class Inventory : MonoBehaviour
             else if (interactable != null && currentHoverItem == null)
             {
                 currentHoverItem = interactable;
-                // if the book, is not hovering, we toggle the hover
                 if (!currentHoverItem.isHovering)
                 {
                     currentHoverItem.Hover();
@@ -101,9 +97,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // by moving pick up logic to inventory, only player inventory need to contain the code
-    // and not the item itself
-    // it will save up performance and space
     private void PickUp(Pickup item)
     {
         AddItem(item);

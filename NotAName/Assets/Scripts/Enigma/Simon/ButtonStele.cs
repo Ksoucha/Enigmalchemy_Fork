@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
+public class ButtonStele : IInteractable, IGlowing
 {
     public bool isGood = false;
     public bool isEnabled = false;
@@ -27,7 +27,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         }
     }
 
-    public void Hover()
+    public override void Hover()
     {
         if (!isEnabled && !solved)
         {
@@ -39,7 +39,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         }
     }
 
-    public virtual bool CanInteract(PickupController item)
+    public override bool CanInteract(Pickup item)
     {
         if (!isEnabled && !solved)
         {
@@ -69,7 +69,7 @@ public class ButtonStele : MonoBehaviour, IInteractable, IGlowing
         material.SetFloat("_EmissiveExposureWeight", 1);
         this.isEnabled = false;
     }
-    public virtual void Interact()
+    public override void Interact()
     {
         GlowingMethod();
         this.isEnabled = true;

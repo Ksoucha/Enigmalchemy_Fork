@@ -10,14 +10,8 @@ public class Book : IInteractable
 
     [SerializeField] private LayerMask interactible = -1;
 
-    // we don't need to do it every frame for hovering
     private void Update()
     {
-        //if (onHover != null)
-        //{
-        //    if (onHover.activeSelf != hover)
-        //        onHover.SetActive(hover);
-        //}
     }
 
     public override void Hover()

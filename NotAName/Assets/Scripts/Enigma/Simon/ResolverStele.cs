@@ -1,9 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using Unity.Burst.Intrinsics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ResolverStele : MonoBehaviour
 {
     public List<ButtonStele> buttonSteleList;
+    public LinkedList<ButtonStele> buttonSteleLinkedList = new LinkedList<ButtonStele>();
 
     [SerializeField] bool isSphere = false;
 
@@ -16,7 +21,15 @@ public class ResolverStele : MonoBehaviour
     [SerializeField]
     private AudioSource errorAudio;
 
-    void Update()
+    private void Awake()
+    {
+        if (buttonSteleList != null)
+        {
+            buttonSteleLinkedList = new LinkedList<ButtonStele>(buttonSteleList);
+        }
+    }
+
+    void FixedUpdate()
     {
         CheckIfCorrect();
     }
@@ -29,35 +42,47 @@ public class ResolverStele : MonoBehaviour
         int enabledGoodCount = 0;
         int enabledCount = 0;
 
-        foreach (var button in buttonSteleList)
+        LinkedListNode<ButtonStele> button = buttonSteleLinkedList.First;
+
+        while (button != null)
         {
-            if (button.isGood) goodCount++;
-            if (button.isGood && button.isEnabled) enabledGoodCount++;
-            if (button.isEnabled) enabledCount++;
+            if (button.Value.isGood)
+                goodCount++;
+            if (button.Value.isGood && button.Value.isEnabled)
+                enabledGoodCount++;
+            if (button.Value.isEnabled)
+                enabledCount++;
+
+            button = button.Next;
         }
 
         if (enabledGoodCount == goodCount && enabledCount == enabledGoodCount)
         {
             Debug.Log("Correct");
-            foreach (var button in buttonSteleList)
+            LinkedListNode<ButtonStele> buttonToCheck = buttonSteleLinkedList.First;
+            while (buttonToCheck != null)
             {
-                button.solved = true;
+                buttonToCheck.Value.solved = true;
+                buttonToCheck = buttonToCheck.Next;
             }
+
             hasCheckedCorrect = true;
             return;
         }
 
         if (isSphere && (enabledCount > enabledGoodCount || enabledCount > goodCount))
         {
-
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= timeToCheck)
             {
                 errorAudio.Play();
-                foreach (var button in buttonSteleList)
+                LinkedListNode<ButtonStele> buttonToCheck = buttonSteleLinkedList.First;
+                while (buttonToCheck.Next != null && buttonToCheck.Next.Value.isEnabled)
                 {
-                    button.UnGlowingMethod();
+                    buttonToCheck.Value.UnGlowingMethod();
+                    buttonToCheck = button.Next;
                 }
+
                 elapsedTime = 0f;
             }
         }
@@ -68,10 +93,13 @@ public class ResolverStele : MonoBehaviour
             if (elapsedTime >= timeToCheck)
             {
                 errorAudio.Play();
-                foreach (var button in buttonSteleList)
+                LinkedListNode<ButtonStele> buttonToCheck = buttonSteleLinkedList.First;
+                while (buttonToCheck != null && buttonToCheck.Value.isEnabled)
                 {
-                    button.UnGlowingMethod();
+                    buttonToCheck.Value.UnGlowingMethod();
+                    buttonToCheck = buttonToCheck.Next;
                 }
+
                 elapsedTime = 0f;
             }
         }
