@@ -1,20 +1,20 @@
 using UnityEngine;
 
-public class DollInteract : MonoBehaviour, IInteractable
+public class DollInteract : IInteractable
 {
     public Rolling lastRolling;
-    public bool CanInteract(PickupController item)
+    public override bool CanInteract(Pickup item)
     {
         return true;
     }
 
-    public void Interact()
+    public override void Interact()
     {
         this.gameObject.SetActive(false);
         lastRolling.StartRolling();
     }
 
-    public void Hover()
+    public override void Hover()
     {
 
     }

@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DollsComeHere : MonoBehaviour, IInteractable
+public class DollsComeHere : IInteractable
 {
 
     private Vector3 startScale;
@@ -18,7 +18,7 @@ public class DollsComeHere : MonoBehaviour, IInteractable
         startScale = this.transform.localScale;
     }
 
-    public void Hover()
+    public override void Hover()
     {
 
     }
@@ -27,12 +27,12 @@ public class DollsComeHere : MonoBehaviour, IInteractable
     {
         this.transform.localScale = startScale + Vector3.one * Mathf.Sin(Time.time * scaleSpeed) * amplitude;
     }
-    public bool CanInteract(PickupController item)
+    public override bool CanInteract(Pickup item)
     {
         return true;
     }
 
-    public void Interact()
+    public override void Interact()
     {
         this.gameObject.SetActive(false);
     }

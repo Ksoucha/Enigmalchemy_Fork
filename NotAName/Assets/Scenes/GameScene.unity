@@ -4049,6 +4049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0836cefa77c3d534c8b405b550f8a67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   scaleSpeed: 1
   amplitude: 0.3
 --- !u!135 &234663867
@@ -4153,6 +4154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a00084fcba624a97d4b40c1d285d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   page: {fileID: 425106018}
   canvas: {fileID: 1874539684}
   onHover: {fileID: 0}
@@ -10623,6 +10625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099de2578556d1147a8e233058bd0c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   lastRolling: {fileID: 24712914}
 --- !u!65 &674045807
 BoxCollider:
@@ -12973,6 +12976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a00084fcba624a97d4b40c1d285d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   page: {fileID: 150193018}
   canvas: {fileID: 1874539684}
   onHover: {fileID: 1664076738}
@@ -14018,6 +14022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fff377b5fce8be4c9ee3aa4956dee1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   offset: {fileID: 1427863999}
   pickKey: 101
   examineKey: 323
@@ -14070,6 +14075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a00084fcba624a97d4b40c1d285d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   page: {fileID: 1877127678}
   canvas: {fileID: 1874539684}
   onHover: {fileID: 1472462955}
@@ -17149,6 +17155,7 @@ GameObject:
   - component: {fileID: 1032134027}
   - component: {fileID: 1032134026}
   - component: {fileID: 1032134025}
+  - component: {fileID: 1032134028}
   m_Layer: 15
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -17247,6 +17254,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032134023}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1032134028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032134023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58aecf00f7f948b49bbac7c39567fc6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1035599468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22020,6 +22039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a00084fcba624a97d4b40c1d285d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   page: {fileID: 1875358614}
   canvas: {fileID: 1874539684}
   onHover: {fileID: 1833788600}
@@ -28722,6 +28742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0836cefa77c3d534c8b405b550f8a67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   scaleSpeed: 2.5
   amplitude: 0.4
 --- !u!135 &1681112209
@@ -28846,6 +28867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a00084fcba624a97d4b40c1d285d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   page: {fileID: 442272322}
   canvas: {fileID: 1874539684}
   onHover: {fileID: 9476550}
@@ -31836,6 +31858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a00084fcba624a97d4b40c1d285d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHovering: 0
   page: {fileID: 425106018}
   canvas: {fileID: 1874539684}
   onHover: {fileID: 1274501671}

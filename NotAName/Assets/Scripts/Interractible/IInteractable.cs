@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public interface IInteractable
+public abstract class IInteractable : MonoBehaviour 
 {
-    bool CanInteract(PickupController item);
-    void Interact();
+    public abstract bool CanInteract(Pickup item);
+    public abstract void Interact();
+    public abstract void Hover();
 
-    void Hover();
+    protected bool isInteracting = false;
+    public bool isHovering = false;
 }

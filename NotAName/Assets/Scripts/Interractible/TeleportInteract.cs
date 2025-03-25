@@ -1,21 +1,21 @@
 using UnityEngine;
 
-public class TeleportInteract : MonoBehaviour, IInteractable
+public class TeleportInteract : IInteractable
 {
     public Transform locationTeleport;
     public GameObject targetTeleport;
 
-    public bool CanInteract(PickupController item)
+    public override bool CanInteract(Pickup item)
     {
         return true;
     }
 
-    public void Interact()
+    public override void Interact()
     {
         targetTeleport.transform.position = locationTeleport.transform.position;
     }
 
-    public void Hover()
+    public override void Hover()
     {
 
     }

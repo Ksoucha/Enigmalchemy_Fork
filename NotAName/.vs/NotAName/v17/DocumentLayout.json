@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|e:\\github\\enigmalchemy_fork\\notaname\\assets\\scripts\\utils\\portalcamerascript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\utils\\portalcamerascript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\player\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|e:\\github\\enigmalchemy_fork\\notaname\\assets\\scripts\\player\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\interractible\\examineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interractible\\examineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|e:\\github\\enigmalchemy_fork\\notaname\\assets\\scripts\\interractible\\iinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interractible\\iinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\drop\u0026pickup\\pickupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\drop\u0026pickup\\pickupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\drop\u0026pickup\\pickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\drop\u0026pickup\\pickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\enigma\\simon\\resolverstele.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enigma\\simon\\resolverstele.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\assets\\scripts\\enigma\\simon\\buttonstele.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D8E50DA-4E06-BFD6-D5C4-6826174668CE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enigma\\simon\\buttonstele.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PortalCameraScript.cs",
-              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Utils\\PortalCameraScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Utils\\PortalCameraScript.cs",
-              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Utils\\PortalCameraScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Utils\\PortalCameraScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IInteractable.cs",
+              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Interractible\\IInteractable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interractible\\IInteractable.cs",
+              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Interractible\\IInteractable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interractible\\IInteractable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T23:24:34.836Z",
+              "WhenOpened": "2025-03-24T22:01:36.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExamineObject.cs",
-              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Interractible\\ExamineObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Interractible\\ExamineObject.cs",
-              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Interractible\\ExamineObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Interractible\\ExamineObject.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAcwHsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Player\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Inventory.cs",
+              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Player\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Inventory.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T21:32:04.799Z",
+              "WhenOpened": "2025-03-22T20:41:08.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ButtonStele.cs",
+              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Enigma\\Simon\\ButtonStele.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enigma\\Simon\\ButtonStele.cs",
+              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Enigma\\Simon\\ButtonStele.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enigma\\Simon\\ButtonStele.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T18:45:49.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResolverStele.cs",
+              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Enigma\\Simon\\ResolverStele.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enigma\\Simon\\ResolverStele.cs",
+              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Enigma\\Simon\\ResolverStele.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enigma\\Simon\\ResolverStele.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowCsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T18:38:26.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Book.cs",
+              "RelativeDocumentMoniker": "Assets\\Book.cs",
+              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Book.cs",
+              "RelativeToolTip": "Assets\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T18:12:33.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
               "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowDwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwDoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T20:58:51.742Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PickupController.cs",
-              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Drop\u0026Pickup\\PickupController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Drop\u0026Pickup\\PickupController.cs",
-              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Drop\u0026Pickup\\PickupController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Drop\u0026Pickup\\PickupController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBoAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Pickup.cs",
+              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Drop\u0026Pickup\\Pickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Drop\u0026Pickup\\Pickup.cs",
+              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Drop\u0026Pickup\\Pickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Drop\u0026Pickup\\Pickup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAASwAMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T20:40:38.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Player\\Inventory.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Inventory.cs",
-              "ToolTip": "E:\\GitHub\\Enigmalchemy_Fork\\NotAName\\Assets\\Scripts\\Player\\Inventory.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T20:41:08.808Z",
               "EditorCaption": ""
             }
           ]

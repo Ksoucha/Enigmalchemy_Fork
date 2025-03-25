@@ -1,7 +1,7 @@
 using UnityEngine;
 using Cursor = UnityEngine.Cursor;
 
-public class ExamineObject : MonoBehaviour, IInteractable
+public class ExamineObject : IInteractable
 {
     public Transform offset;
     protected GameObject playerObject;
@@ -138,12 +138,12 @@ public class ExamineObject : MonoBehaviour, IInteractable
         currentRotation = originalRotation;
     }
 
-    public bool CanInteract(PickupController item)
+    public override bool CanInteract(Pickup item)
     {
         return true;
     }
 
-    public void Hover()
+    public override void Hover()
     {
         if (highlight != null)
         {
@@ -152,7 +152,7 @@ public class ExamineObject : MonoBehaviour, IInteractable
         hover = true;
     }
 
-    public void Interact()
+    public override void Interact()
     {
         Debug.Log("U can't WTF");
     }
