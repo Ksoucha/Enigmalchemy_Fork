@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Book : MonoBehaviour, IInteractable
+public class Book : IInteractable
 {
     [SerializeField] private GameObject page;
     [SerializeField] private GameObject canvas;
@@ -10,36 +10,39 @@ public class Book : MonoBehaviour, IInteractable
 
     [SerializeField] private LayerMask interactible = -1;
 
-    private bool hover = false;
+    // we don't need to do it every frame for hovering
     private void Update()
+    {
+        //if (onHover != null)
+        //{
+        //    if (onHover.activeSelf != hover)
+        //        onHover.SetActive(hover);
+        //}
+    }
+
+    public override void Hover()
     {
         if (onHover != null)
         {
-            if (hover == false)
-                onHover.SetActive(false);
-            else
-                hover = false;
+            isHovering = !isHovering;
+            onHover.SetActive(isHovering);
         }
     }
 
-    public void Hover()
-    {
-        onHover.SetActive(true);
-        hover = true;
-    }
-
-    public bool CanInteract(PickupController item)
+    public override bool CanInteract(Pickup item)
     {
         return true;
     }
 
-    public void Interact()
+    public override void Interact()
     {
+        isInteracting = !isInteracting;
         foreach (GameObject obj in toDisable)
         {
             obj.SetActive(false);
         }
-        canvas.SetActive(true);
-        page.SetActive(true);
+
+        canvas.SetActive(isInteracting);
+        page.SetActive(isInteracting);
     }
 }
