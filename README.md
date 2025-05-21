@@ -33,8 +33,3 @@ These steps were followed in order to contribute to this project:
     - Commited changes that fix a gameplay bug and enhance accessibility
     - Accessibility improvement: player movement was not natural when the player was walking down the stairs
     - Bug fix: the interactable books in the game were not always showing correctly when pressing **E** (to interact)
-
-### Steps to run the game
-1. Clone the repository
-2. Navigate to the project folder
-3. Open the GameScene in _NotAName_ > _Assets_ > _Scenes_ > GameScene.unity
