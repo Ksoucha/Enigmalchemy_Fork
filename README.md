@@ -33,3 +33,6 @@ These steps were followed in order to contribute to this project:
     - Commited changes that fix a gameplay bug and enhance accessibility
     - Accessibility improvement: player movement was not natural when the player was walking down the stairs
     - Bug fix: the interactable books in the game were not always showing correctly when pressing **E** (to interact)
+  
+### Files
+* **Enigmalchemy changes.pdf:** Documentation about the data structure, algorithm and other changes that I contributed to this project. Includes the code snippets and descriptions.f
