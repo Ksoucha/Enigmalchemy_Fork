@@ -35,4 +35,4 @@ These steps were followed in order to contribute to this project:
     - Bug fix: the interactable books in the game were not always showing correctly when pressing **E** (to interact)
   
 ### Files
-* **Enigmalchemy changes.pdf:** Documentation about the data structure, algorithm and other changes that I contributed to this project. Includes the code snippets and descriptions.f
+* **Enigmalchemy changes.pdf:** Documentation about the data structures, algorithms and other code changes that I made to this project. Includes the code snippets and descriptions.
